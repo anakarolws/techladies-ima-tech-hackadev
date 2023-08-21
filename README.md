@@ -22,7 +22,7 @@
  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=1500&pause=1000&color=E4D5F2&center=true&vCenter=true&multiline=true&width=300&lines=Ana+Karolina+Souza" />
  <br>
  <!-- foto -->
-    <img src="assets/img/category/membros/ana_karolina_souza.jpeg" alt="Ana Karolina Souza" width="200px" style="border-radius: 50%; margin-bottom: 15px;"/><br>
+    <img src="ecommerce/assets/img/karol.jpeg" alt="Ana Karolina Souza" width="200px" style="border-radius: 50%; margin-bottom: 15px;"/><br>
     <!-- about -->
     <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=1500&pause=1000&color=7B51A6&center=true&vCenter=true&multiline=true&width=500&height=70&lines=Em+transi%C3%A7%C3%A3o+de+carreira+para+a+%C3%A1rea+de+tecnologia.+;Arquiteta%2C+aut%C3%B4noma%2C+em+busca+de+novos+desafios." /></a>
 <br>
