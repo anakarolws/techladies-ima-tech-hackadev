@@ -115,7 +115,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: const GNav(
-          duration: Duration(milliseconds: 100), // duração da transicação
+          duration: Duration(milliseconds: 200), // duração da transicação
           gap: 8, // espaço entre o botão e o texto
           color: Colors.grey, // cor do ícone sem ação
           activeColor: Colors.white, // cor do texto  e botão ativados

@@ -1,4 +1,4 @@
- 
+/*  
  import 'package:flutter/material.dart';
  import 'package:badges/badges.dart' as badge;
 
@@ -36,4 +36,5 @@ class HomeAppBar extends StatelessWidget {
       ),
     );
   }
-}
+} */
+
