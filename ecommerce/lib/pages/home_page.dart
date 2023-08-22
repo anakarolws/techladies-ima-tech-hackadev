@@ -17,11 +17,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      //header do projeto
+      //DENISE E ANA KAROLINA COLOQUEM O NAVBAR NESSA PARTE 
       appBar: AppBar(
          title: const Text('Espaço Navbar'),
          centerTitle: true,
       ),
+      //DENISE E ANA KAROLINA COLOQUEM O NAVBAR NESSA PARTE 
     
       body: Container(
          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
