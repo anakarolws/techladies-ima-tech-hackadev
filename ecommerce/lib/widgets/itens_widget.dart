@@ -53,7 +53,7 @@ class ItensWidget extends StatelessWidget {
                     child: Container(
                       margin: const EdgeInsets.all(10),
                       child: Image.asset(
-                        "assets/img/category/eletroeletronicos/fone0${i}.webp",
+                        "assets/img/category/eletroeletronicos/fone0$i.webp",
                         height: 120,
                         width: 120,
                       ),
