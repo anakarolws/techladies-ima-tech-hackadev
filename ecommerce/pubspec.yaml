@@ -72,6 +72,17 @@ flutter:
     - assets/img/category/eletroeletronicos/fone04.webp
     - assets/img/category/eletroeletronicos/fone05.webp
 
+    - assets/img/category/smarttv/01.webp
+    - assets/img/category/smarttv/02.webp
+    - assets/img/category/smarttv/03.webp
+    - assets/img/category/smarttv/04.webp
+
+    - assets/img/category/smartphones/01.webp
+    - assets/img/category/smartphones/02.webp
+    - assets/img/category/smartphones/03.webp
+    - assets/img/category/smartphones/04.webp
+    
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
