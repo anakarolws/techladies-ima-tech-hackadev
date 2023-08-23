@@ -1,5 +1,6 @@
 import 'package:ecommerce/widgets/melhores_produtos.dart';
 import 'package:flutter/material.dart';
+import 'package:ecommerce/widgets/navbar.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 import '../widgets/categories_widget.dart';
@@ -7,23 +8,28 @@ import '../widgets/categories_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
-
   @override
   _HomePageState createState() => _HomePageState();
 }
-
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      //DENISE E ANA KAROLINA COLOQUEM O NAVBAR NESSA PARTE 
       appBar: AppBar(
-         title: const Text('Espaço Navbar'),
-         centerTitle: true,
+        title: const Text('Tech Ladies', style: TextStyle(color: Colors.purple),),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        iconTheme: const IconThemeData(color: Colors.grey),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              showSearch(context: context, delegate: SearchBarDelegate());
+            },
+          ),
+        ],
       ),
-      //DENISE E ANA KAROLINA COLOQUEM O NAVBAR NESSA PARTE 
-    
+      drawer: const NavDrawer(),
       body: Container(
          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
 
