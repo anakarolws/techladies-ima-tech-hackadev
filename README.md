@@ -59,7 +59,7 @@
  <!-- foto -->
     <img src="assets/img/category/membros/gisely_meneses_de_oliveira.jpg" alt="Gisely Meneses de Oliveira" width="200px" style="border-radius: 50%; margin-bottom: 15px;"/><br>
     <!-- about -->
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=1500&pause=1200&color=7B51A6&center=true&vCenter=true&multiline=true&width=1200&height=90&lines=Sou+uma+Analista+de+Requisitos+apaixonada+pela+minha+fam%C3%ADlia%2C+por+tecnologia+e+inova%C3%A7%C3%A3o;+e+conta+banc%C3%A1ria+com+grana.+Minha+jornada+profissional+tem+sido+marcada+por+uma+busca+constante;+por+aprender+e+contribuir+para+projetos%C2%A0emocionantes."  />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=1500&pause=1200&color=7B51A6&center=true&vCenter=true&multiline=true&width=1200&height=90&lines=Sou+uma+Analista+de+Requisitos+apaixonada+pela+minha+fam%C3%ADlia%2C+por+tecnologia+e+inova%C3%A7%C3%A3o.+Minha+jornada+profissional+tem+sido+marcada+por+uma+busca+constante;+por+aprender+e+contribuir+para+projetos%C2%A0emocionantes."  />
     
 <br>
 <!-- github -->
