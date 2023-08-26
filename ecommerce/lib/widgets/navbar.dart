@@ -52,7 +52,7 @@ class NavDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.smartphone_rounded),
-            title: const Text('Smartphone'),
+            title: const Text('Smartphones'),
             onTap: () {
               // Adicione a lógica para navegar para a página inicial
               Navigator.pop(context); // Fecha o drawer
@@ -60,7 +60,7 @@ class NavDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.tv_outlined),
-            title: const Text('SmartTv'),
+            title: const Text('SmartTvs'),
             onTap: () {
               // Adicione a lógica para navegar para a página inicial
               Navigator.pop(context); // Fecha o drawer
@@ -97,7 +97,7 @@ class SearchBarDelegate extends SearchDelegate<String> {
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
-      icon: const Icon(Icons.arrow_back_ios_new_rounded),
+      icon: const Icon(Icons.arrow_back),
       onPressed: () {
         close(context, '');
       },
@@ -123,16 +123,16 @@ class SearchBarDelegate extends SearchDelegate<String> {
           },
         ),
         ListTile(
-          title: const Text('Smartphone'),
+          title: const Text('Smartphones'),
           onTap: () {
-            query = 'Smartphone';
+            query = 'Smartphones';
             showResults(context);
           },
         ),
         ListTile(
-          title: const Text('SmartTv'),
+          title: const Text('SmartTvs'),
           onTap: () {
-            query = 'SmartTv';
+            query = 'SmartTvs';
             showResults(context);
           },
         ),
