@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 
 class SmartTv extends StatelessWidget {
   SmartTv({super.key});
@@ -106,10 +107,10 @@ class SmartTv extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Icon(
-                      Icons.favorite_border,
-                      color: Colors.red,
-                    ),
+                    //botão favoritos
+                    const LikeButton(
+                     animationDuration: Duration(seconds: 0)
+                    )
                   ],
                 ),
 
