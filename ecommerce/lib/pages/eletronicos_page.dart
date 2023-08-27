@@ -60,7 +60,7 @@ class EletronicosPage extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.only(left: 20),
                   child: Text(
-                    "Eletroeletrônicos",
+                    "Eletrônicos",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
