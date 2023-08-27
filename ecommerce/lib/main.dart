@@ -1,3 +1,8 @@
+import 'package:ecommerce/pages/configuracoes_page.dart';
+import 'package:ecommerce/pages/eletronicos_page.dart';
+import 'package:ecommerce/pages/minha_conta_page.dart';
+import 'package:ecommerce/pages/smartphone_page.dart';
+import 'package:ecommerce/pages/smarttv.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/cart_page.dart';
@@ -25,6 +30,11 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => const HomePage(),
         "cartPage":(context) => const CartPage(),
+        "/minhaContaPage": (context) => const MinhaContaPage(),
+        "/eletronicosPage": (context) => EletronicosPage(),
+        "/smartphonePage": (context) => SmartphonePage(),
+        "/smartTv": (context) => SmartTv(),
+        "/configuracoesPage": (context) => const ConfiguracoesPage(),
         
       },
     );

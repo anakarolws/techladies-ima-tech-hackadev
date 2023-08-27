@@ -1,4 +1,8 @@
+import 'package:ecommerce/pages/smartphone_page.dart';
+import 'package:ecommerce/pages/smarttv.dart';
 import 'package:flutter/material.dart';
+import '../pages/eletronicos_page.dart';
+
 
 class NavDrawer extends StatelessWidget {
   const NavDrawer({super.key});
@@ -18,13 +22,13 @@ class NavDrawer extends StatelessWidget {
                 color: Color.fromRGBO(109, 68, 166, 1), // Cor do nome
                 fontSize: 18.0, // Tamanho do texto do nome
               ),
-              ),
+            ),
             accountEmail: Text(
               'seuemail@example.com',
               style: TextStyle(
                 color: Color.fromRGBO(109, 68, 166, 1), // Cor do email
               ),
-              ),
+            ),
             currentAccountPicture: CircleAvatar(
               backgroundColor: Colors.purple,
               child: Icon(
@@ -40,6 +44,11 @@ class NavDrawer extends StatelessWidget {
             onTap: () {
               // Adicione a lógica para navegar para a página inicial
               Navigator.pop(context); // Fecha o drawer
+              Navigator.pushNamed(context, '/minhaContaPage');
+              // Navigator.push(
+              //  context,
+              //   MaterialPageRoute(builder: (context) => const MinhaContaPage()),
+              // );
             },
           ),
           ListTile(
@@ -48,6 +57,11 @@ class NavDrawer extends StatelessWidget {
             onTap: () {
               // Adicione a lógica para navegar para a página inicial
               Navigator.pop(context); // Fecha o drawer
+              Navigator.pushNamed(context, '/eletronicosPage');
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => EletronicosPage()),
+              // );
             },
           ),
           ListTile(
@@ -56,6 +70,11 @@ class NavDrawer extends StatelessWidget {
             onTap: () {
               // Adicione a lógica para navegar para a página inicial
               Navigator.pop(context); // Fecha o drawer
+              Navigator.pushNamed(context, '/smartphonePage');
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => SmartphonePage()),
+              // );
             },
           ),
           ListTile(
@@ -64,6 +83,11 @@ class NavDrawer extends StatelessWidget {
             onTap: () {
               // Adicione a lógica para navegar para a página inicial
               Navigator.pop(context); // Fecha o drawer
+              Navigator.pushNamed(context, '/smartTv');
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => SmartTv()),
+              // );
             },
           ),
           ListTile(
@@ -72,6 +96,11 @@ class NavDrawer extends StatelessWidget {
             onTap: () {
               // Adicione a lógica para navegar para a página de configurações
               Navigator.pop(context); // Fecha o drawer
+              Navigator.pushNamed(context, '/configuracoesPage');
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => const ConfiguracoesPage()),
+              // );
             },
           ),
           // Adicione mais itens de menu conforme necessário
@@ -80,6 +109,7 @@ class NavDrawer extends StatelessWidget {
     );
   }
 }
+
 
 class SearchBarDelegate extends SearchDelegate<String> {
   @override
@@ -119,21 +149,28 @@ class SearchBarDelegate extends SearchDelegate<String> {
           title: const Text('Eletrônicos'),
           onTap: () {
             query = 'Eletrônicos';
-            showResults(context);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => EletronicosPage()));
           },
         ),
         ListTile(
           title: const Text('Smartphones'),
           onTap: () {
             query = 'Smartphones';
-            showResults(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SmartphonePage()),
+            );
           },
         ),
         ListTile(
           title: const Text('SmartTvs'),
           onTap: () {
             query = 'SmartTvs';
-            showResults(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SmartTv()),
+            );
           },
         ),
         // Adicione mais sugestões de pesquisa conforme necessário
