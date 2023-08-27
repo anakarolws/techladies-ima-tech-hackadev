@@ -104,7 +104,9 @@ class _HomePageState extends State<HomePage> {
               GButton(icon: Icons.home, text: "Início", onPressed: () {
                     Navigator.pushNamed(context, "/");
                   }),
-              const GButton(icon: Icons.favorite, text: "Favoritos"),
+              GButton(icon: Icons.favorite, text: "Favoritos", onPressed: (){
+                Navigator.pushNamed(context, "favoritosPage");
+              } ,),
               GButton(
                   icon: Icons.shopping_cart,
                   text: "Carrinho",
@@ -119,3 +121,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
