@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
+
 
 class EletronicosPage extends StatelessWidget {
   EletronicosPage({super.key});
@@ -106,10 +108,10 @@ class EletronicosPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Icon(
-                      Icons.favorite_border,
-                      color: Colors.red,
-                    ),
+                    //botão favoritos
+                    const LikeButton(
+                     animationDuration: Duration(seconds: 0)
+                    )
                   ],
                 ),
 
