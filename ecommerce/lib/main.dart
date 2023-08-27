@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 
 import 'pages/cart_page.dart';
 import 'pages/home_page.dart';
+// ignore: duplicate_import
+import 'pages/minha_conta_page.dart';
 
 
 
