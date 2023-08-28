@@ -1,264 +1,112 @@
+import 'package:ecommerce/model/dados_produtos.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
-
-
-class MelhoresProdutos extends StatelessWidget {
-  MelhoresProdutos({super.key});
-
-  final List<Map<String, dynamic>> products = [
-    {
-      "image": "assets/img/category/eletroeletronicos/fone01.webp",
-      "title": "Fone de Ouvido",
-      "description": "Fone de ouvido sem fio ",
-      "price": 60.00,
-      "discount": 30
-    },
-    {
-      "image": "assets/img/category/eletroeletronicos/fone02.webp",
-      "title": "Fone Gamer",
-      "description": "Fone de ouvido gamer",
-      "price": 120.00,
-      "discount": 20
-    },
-    {
-      "image": "assets/img/category/smarttv/01.webp",
-      "title": "Smart TV LED",
-      "description": "TV de alta qualidade",
-      "price": 80.00,
-      "discount": 10
-    },
-    {
-      "image": "assets/img/category/smartphones/04.webp",
-      "title": "Xiaomi POCO",
-      "description": "Celular TOPzeira POCO",
-      "price": 100.00,
-      "discount": 15
-    }
-  ];
+class TodosProdutos extends StatelessWidget {
+  const TodosProdutos({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      childAspectRatio: 0.68,
-      physics: NeverScrollableScrollPhysics(),
-      crossAxisCount: 2,
-      shrinkWrap: true,
-      children: products.map((product) => Container(
-            padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
-            margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-            decoration: BoxDecoration(
-              color: Color.fromRGBO(156, 131, 192, 0.10),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Column(
-              children: [
-                //linha da porcentagem de desconto e do botão de curtir
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                          color: const Color.fromRGBO(109, 68, 166, 1),
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Text(
-                        "-${product['discount']}%",
-                        style: const TextStyle(
-                          fontSize: 12,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+    var produtos = todasCategorias.getTodosProdutos();
+    return SliverGrid(
+    
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, childAspectRatio: 0.78),
+      delegate: SliverChildBuilderDelegate(
+        (context, index) {
+          var produto = produtos[index];
+          return Card(
+              shape: RoundedRectangleBorder(
+                side: const BorderSide(
+                    color: Color.fromRGBO(109, 68, 166, 1), width: 1),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Column(children: [
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 7),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            color: const Color.fromRGBO(109, 68, 166, 1),
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Text(
+                          "-${produto.discount}%",
+                          style: const TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                   //botão favoritos
+                      //botão favoritos
                     const LikeButton(
                      animationDuration: Duration(seconds: 0)
                     )
-                  ],
+                    ],
+                  ),
                 ),
-
-                //imagem do produto inclusa em container card
                 Expanded(
-                  child: Material(
-                    child: InkWell(
-                      onTap: () {},
-                      child: Container(
-                        margin: const EdgeInsets.all(10),
-                        child: Image.asset(
-                          product['image'],
-                          height: 120,
-                          width: 120,
-                        ),
-                      ),
+                  child: Container(
+                    margin: const EdgeInsets.all(10),
+                    child: Image.asset(
+                      produto.image!,
+                      height: 120,
+                      width: 120,
                     ),
                   ),
                 ),
-
-                //titulo do produto em card
-               Container(
-    padding: const EdgeInsets.only(bottom: 8),
-    child: Text(
-      product['title'],
-      style: const TextStyle(
-        fontSize: 15,
-        color: Color.fromRGBO(109, 68, 166, 1),
-        fontWeight: FontWeight.bold,
-      ),
-    )),
-
-//descrição do produto de card
-Container(
-  alignment: Alignment.centerLeft,
-  child: Text(
-    product['description'],
-    style: const TextStyle(
-        fontSize: 12, color: Color.fromRGBO(109, 68, 166, 1)),
-  ),
-),
-
-Padding(
-    padding: EdgeInsets.symmetric(vertical: 10),
-    child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            "R\$${product['price']}",
-            style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(109, 68, 166, 1)),
-          ),
-          const Icon(
-            Icons.shopping_cart_checkout,
-            color: Color.fromRGBO(109, 68, 166, 1),
-          ),
-        ])),
-              ],
-            ),
-          )).toList(),
-    );
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-class ItensWidget extends StatelessWidget {
-  const ItensWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.count(
-      childAspectRatio: 0.68,
-      physics: NeverScrollableScrollPhysics(),
-      crossAxisCount: 2,
-      shrinkWrap: true,
-      children: [
-        for (int i = 1; i < 5; i++)
-          Container(
-            padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
-            margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Column(
-              children: [
-                //linha da porcentagem de desconto e do botão de curtir
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                          color: const Color.fromRGBO(109, 68, 166, 1),
-                          borderRadius: BorderRadius.circular(20)),
-                      child: const Text(
-                        "-30%",
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    const Icon(
-                      Icons.favorite_border,
-                      color: Colors.red,
-                    ),
-                  ],
-                ),
-
-                //imagem do produto inclusa em container card
-                Expanded(
-                  child: InkWell(
-                    onTap: () {},
-                    child: Container(
-                      margin: const EdgeInsets.all(10),
-                      child: Image.asset(
-                        "assets/img/category/eletroeletronicos/fone0$i.webp",
-                        height: 120,
-                        width: 120,
-                      ),
-                    ),
-                  ),
-                ),
-
-                //titulo do produto em card
                 Container(
                     padding: const EdgeInsets.only(bottom: 8),
-                    child: const Text(
-                      "Produto:",
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Color.fromRGBO(109, 68, 166, 1),
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )),
-
-                //descrição do produto de card
-                Container(
-                  alignment: Alignment.centerLeft,
-                  child: const Text("Descrição do produto",
-                      style: TextStyle(
-                          fontSize: 12,
-                          color: Color.fromRGBO(109, 68, 166, 1))),
-                ),
-
-                const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "R\$60,00",
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                                color: Color.fromRGBO(109, 68, 166, 1)),
-                          ),
-                          Icon(
-                            Icons.shopping_cart_checkout,
+                    child:
+                        Text(produto.title!, style:
+                        const TextStyle(
+                          fontSize: 15,
                             color: Color.fromRGBO(109, 68, 166, 1),
+                            fontWeight: FontWeight.bold))),
+                Container(
+                  alignment:
+                      Alignment.center,
+                  child:
+                      Text(
+                        produto.description!, 
+                        style: const TextStyle(
+                          fontSize: 12, 
+                          color: Color.fromRGBO(109, 68, 166, 1)
+                        )
+                      ),
+                ),
+                Padding(
+                    padding:
+                        const EdgeInsets.symmetric(
+                          vertical: 10, 
+                          horizontal: 5),
+                    child:
+                        Row(mainAxisAlignment:
+                        MainAxisAlignment.spaceBetween,
+                            children:
+                        [
+                          Text("R\$${produto.price}",
+                              style:
+                                  const TextStyle(
+                                    fontSize: 14,
+                                      fontWeight:FontWeight.bold,
+                                      color:Color.fromRGBO(109, 68, 166, 1)
+                                    )
                           ),
-                        ])),
-              ],
-            ),
-          ),
-      ],
+                          const Icon(Icons.shopping_cart_checkout,
+                              color: Color.fromRGBO(109, 68, 166, 1)
+                          ),
+                        ])
+                  ),
+              ])
+            );
+        },
+        childCount: produtos.length,
+      ),
     );
   }
 }
- */

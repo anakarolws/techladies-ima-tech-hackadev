@@ -34,55 +34,65 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       drawer: const NavDrawer(),
-      body: Container(
+     body: Container(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-        child: ListView(
-          children: [
-            //parte de configuração do layout principal
-            Container(
-              padding: const EdgeInsets.only(top: 15),
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(35),
-                    topRight: Radius.circular(35)),
-              ),
-            ),
+        child: CustomScrollView(
+        slivers: [
+          SliverList(
+            delegate: SliverChildListDelegate([
+              //parte de configuração do layout principal
+              Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(top: 15),
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(35),
+                          topRight: Radius.circular(35)),
+                    ),
+                  ),
 
-            //container com o título de categorias
-            Container(
-              alignment: Alignment.centerLeft,
-              margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-              child: const Text(
-                "Categorias",
-                style: TextStyle(
-                  fontSize: 21,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromRGBO(109, 68, 166, 1),
+                //container com o título de categorias
+                Container(
+                  alignment: Alignment.centerLeft,
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                  child: const Text(
+                    "Categorias",
+                    style: TextStyle(
+                      fontSize: 21,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(109, 68, 166, 1),
+                    ),
+                  ),
                 ),
-              ),
-            ),
 
             //classe com layout para categoria de produtos
             const CategoriesWidget(),
-
-            //itens - titulo acima dos produtos
-            Container(
-              alignment: Alignment.centerLeft,
-              margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-              child: const Text(
-                "Melhores produtos",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromRGBO(109, 68, 166, 1),
-                ),
-              ),
-            ),
-
-            //itens dos produtos
-            MelhoresProdutos(),
           ],
         ),
+
+        //itens - titulo acima dos produtos
+          Container(
+            alignment: Alignment.centerLeft,
+            margin:
+                const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+            child: const Text(
+              "Todos os produtos",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Color.fromRGBO(109, 68, 166, 1),
+              ),
+            ),
+          ),
+        ]),
+      ),
+
+    // Inclusão da classe MelhoresProdutos
+      const TodosProdutos(),
+  ],
+),
       ),
 
       //menu de botoes no footer
