@@ -2,7 +2,7 @@ import 'package:ecommerce/pages/configuracoes_page.dart';
 import 'package:ecommerce/pages/eletronicos_page.dart';
 import 'package:ecommerce/pages/minha_conta_page.dart';
 import 'package:ecommerce/pages/smartphone_page.dart';
-import 'package:ecommerce/pages/smarttv.dart';
+import 'package:ecommerce/pages/smarttv_page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         "/minhaContaPage": (context) => const MinhaContaPage(),
         "/eletronicosPage": (context) => EletronicosPage(),
         "/smartphonePage": (context) => SmartphonePage(),
-        "/smartTv": (context) => SmartTv(),
+        "/smartTv": (context) => SmartTvPage(),
         "/configuracoesPage": (context) => const ConfiguracoesPage(),
         "favoritosPage": (context) => const Favoritos(),
         

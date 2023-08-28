@@ -1,5 +1,5 @@
 import 'package:ecommerce/pages/eletronicos_page.dart';
-import 'package:ecommerce/pages/smarttv.dart';
+import 'package:ecommerce/pages/smarttv_page.dart';
 import 'package:flutter/material.dart';
 
 import '../pages/smartphone_page.dart';
@@ -21,7 +21,7 @@ class CategoriesWidget extends StatelessWidget {
     } else if (category == "Smart TV") {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => SmartTv()),
+        MaterialPageRoute(builder: (context) => SmartTvPage()),
       );
     }
   }

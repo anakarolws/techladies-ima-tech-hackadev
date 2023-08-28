@@ -1,5 +1,5 @@
 import 'package:ecommerce/pages/smartphone_page.dart';
-import 'package:ecommerce/pages/smarttv.dart';
+import 'package:ecommerce/pages/smarttv_page.dart';
 import 'package:flutter/material.dart';
 import '../pages/eletronicos_page.dart';
 
@@ -169,7 +169,7 @@ class SearchBarDelegate extends SearchDelegate<String> {
             query = 'SmartTvs';
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => SmartTv()),
+              MaterialPageRoute(builder: (context) => SmartTvPage()),
             );
           },
         ),

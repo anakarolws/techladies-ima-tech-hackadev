@@ -1,4 +1,4 @@
-import 'package:ecommerce/widgets/melhores_produtos.dart';
+import 'package:ecommerce/widgets/todos_produtos.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/widgets/navbar.dart';
 
