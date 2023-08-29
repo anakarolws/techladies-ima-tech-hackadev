@@ -1,7 +1,6 @@
+import 'package:ecommerce/model/dados_produtos.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
-
-import '../model/dados_produtos.dart';
 
 class EletronicosPage extends StatelessWidget {
   const EletronicosPage({super.key});
@@ -73,6 +72,7 @@ class EletronicosPage extends StatelessWidget {
                   eletronicos[index].image!,
                   height: 120,
                   width: 140,
+                  
                 ),
               ),
             ),
@@ -83,12 +83,7 @@ class EletronicosPage extends StatelessWidget {
                         fontSize: 15,
                         color: Color.fromRGBO(109, 68, 166, 1),
                         fontWeight: FontWeight.bold))),
-            Container(
-              alignment: Alignment.center,
-              child: Text(eletronicos[index].description!,
-                  style: const TextStyle(
-                      fontSize: 12, color: Color.fromRGBO(109, 68, 166, 1))),
-            ),
+           
             Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                 child: Row(

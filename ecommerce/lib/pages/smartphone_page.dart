@@ -1,7 +1,7 @@
+import 'package:ecommerce/model/dados_produtos.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
-import '../model/dados_produtos.dart';
 
 class SmartphonePage extends StatelessWidget {
   const SmartphonePage({super.key});
@@ -9,7 +9,7 @@ class SmartphonePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: Colors.white,
         
         iconTheme: const IconThemeData(
@@ -28,9 +28,8 @@ class SmartphonePage extends StatelessWidget {
           ),
         ),
       ),
-
-
-        body: GridView.builder(
+      
+      body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, childAspectRatio: 0.78),
         itemCount: smartphones.length,
@@ -86,12 +85,7 @@ class SmartphonePage extends StatelessWidget {
                         fontSize: 15,
                         color: Color.fromRGBO(109, 68, 166, 1),
                         fontWeight: FontWeight.bold))),
-            Container(
-              alignment: Alignment.center,
-              child: Text(smartphones[index].description!,
-                  style: const TextStyle(
-                      fontSize: 12, color: Color.fromRGBO(109, 68, 166, 1))),
-            ),
+           
             Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                 child: Row(

@@ -1,10 +1,10 @@
 import 'package:ecommerce/widgets/todos_produtos.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/widgets/navbar.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 import '../widgets/categories_widget.dart';
-
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,9 +17,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Tech Ladies',
-          style: TextStyle(color: Colors.purple),
+        title: Text(
+          'Tech Ladies Shop',
+          style: GoogleFonts.roboto(
+            color: Color.fromRGBO(109, 68, 166, 1),
+          ),
         ),
         centerTitle: true,
         backgroundColor: Colors.white,
@@ -34,65 +36,64 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       drawer: const NavDrawer(),
-     body: Container(
+      body: Container(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
         child: CustomScrollView(
-        slivers: [
-          SliverList(
-            delegate: SliverChildListDelegate([
-              //parte de configuração do layout principal
-              Column(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.only(top: 15),
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(35),
-                          topRight: Radius.circular(35)),
+          slivers: [
+            SliverList(
+              delegate: SliverChildListDelegate([
+                //parte de configuração do layout principal
+                Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(top: 15),
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(35),
+                            topRight: Radius.circular(35)),
+                      ),
                     ),
-                  ),
 
-                //container com o título de categorias
+                    //container com o título de categorias
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 10),
+                      child: Text(
+                        "Categorias",
+                        style: GoogleFonts.roboto(
+                            color: Color.fromRGBO(109, 68, 166, 1),
+                            fontSize: 21,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+
+                    //classe com layout para categoria de produtos
+                    const CategoriesWidget(),
+                  ],
+                ),
+
+                //itens - titulo acima dos produtos
                 Container(
                   alignment: Alignment.centerLeft,
                   margin:
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                  child: const Text(
-                    "Categorias",
-                    style: TextStyle(
-                      fontSize: 21,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromRGBO(109, 68, 166, 1),
-                    ),
+                  child: Text(
+                    "Todos os produtos",
+                     style: GoogleFonts.roboto(
+                            color: Color.fromRGBO(109, 68, 166, 1),
+                            fontSize: 21,
+                            fontWeight: FontWeight.bold),
+                      ),
                   ),
-                ),
+                
+              ]),
+            ),
 
-            //classe com layout para categoria de produtos
-            const CategoriesWidget(),
+            // Inclusão da classe MelhoresProdutos
+            const TodosProdutos(),
           ],
         ),
-
-        //itens - titulo acima dos produtos
-          Container(
-            alignment: Alignment.centerLeft,
-            margin:
-                const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-            child: const Text(
-              "Todos os produtos",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(109, 68, 166, 1),
-              ),
-            ),
-          ),
-        ]),
-      ),
-
-    // Inclusão da classe MelhoresProdutos
-      const TodosProdutos(),
-  ],
-),
       ),
 
       //menu de botoes no footer
@@ -111,19 +112,29 @@ class _HomePageState extends State<HomePage> {
                 vertical: 10), // preenchimento da barra de navegação
 
             tabs: [
-              GButton(icon: Icons.home, text: "Início", onPressed: () {
+              GButton(
+                  icon: Icons.home,
+                  text: "Início",
+                  onPressed: () {
                     Navigator.pushNamed(context, "/");
                   }),
-              GButton(icon: Icons.favorite, text: "Favoritos", onPressed: (){
-                Navigator.pushNamed(context, "favoritosPage");
-              } ,),
+              GButton(
+                icon: Icons.favorite,
+                text: "Favoritos",
+                onPressed: () {
+                  Navigator.pushNamed(context, "favoritosPage");
+                },
+              ),
               GButton(
                   icon: Icons.shopping_cart,
                   text: "Carrinho",
                   onPressed: () {
                     Navigator.pushNamed(context, "cartPage");
                   }),
-             GButton(icon: Icons.person, text: "Minha Conta", onPressed: () {
+              GButton(
+                  icon: Icons.person,
+                  text: "Minha Conta",
+                  onPressed: () {
                     Navigator.pushNamed(context, "/minhaContaPage");
                   }),
             ],
@@ -131,4 +142,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-

@@ -82,12 +82,7 @@ class SmartTvPage extends StatelessWidget {
                         fontSize: 15,
                         color: Color.fromRGBO(109, 68, 166, 1),
                         fontWeight: FontWeight.bold))),
-            Container(
-              alignment: Alignment.center,
-              child: Text(smartTv[index].description!,
-                  style: const TextStyle(
-                      fontSize: 12, color: Color.fromRGBO(109, 68, 166, 1))),
-            ),
+            
             Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                 child: Row(

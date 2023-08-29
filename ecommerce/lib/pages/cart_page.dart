@@ -67,10 +67,11 @@ class CartPage extends StatelessWidget {
             color: Colors.grey, // cor do ícone sem ação
             activeColor: Colors.white, // cor do texto  e botão ativados
             iconSize: 30, // tamanho do botão
-            tabBackgroundColor: Colors.purple, // cor de fundo do botão ativado
+            tabBackgroundColor: Colors.purple,
+            tabMargin: EdgeInsets.symmetric(vertical: 20, horizontal: 0), // cor de fundo do botão ativado
             padding: const EdgeInsets.symmetric(
                 horizontal: 60,
-                vertical: 30), // preenchimento da barra de navegação
+                vertical: 20), // preenchimento da barra de navegação
 
             tabs: [
               GButton(icon: Icons.shopping_basket, text: "Comprar", onPressed: () {
