@@ -17,13 +17,22 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Tech Ladies Shop',
-          style: GoogleFonts.roboto(
-            color: Color.fromRGBO(109, 68, 166, 1),
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              Icons.devices_other,
+              color: Color.fromRGBO(109, 68, 166, 1),
+            ),
+            const SizedBox(width: 8),
+            Text(
+              'Tech Place',
+              style: GoogleFonts.roboto(
+                color: Color.fromRGBO(109, 68, 166, 1),
+              ),
+            ),
+          ],
         ),
-        centerTitle: true,
         backgroundColor: Colors.white,
         iconTheme: const IconThemeData(color: Colors.grey),
         actions: <Widget>[
@@ -80,13 +89,12 @@ class _HomePageState extends State<HomePage> {
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                   child: Text(
                     "Todos os produtos",
-                     style: GoogleFonts.roboto(
-                            color: Color.fromRGBO(109, 68, 166, 1),
-                            fontSize: 21,
-                            fontWeight: FontWeight.bold),
-                      ),
+                    style: GoogleFonts.roboto(
+                        color: Color.fromRGBO(109, 68, 166, 1),
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold),
                   ),
-                
+                ),
               ]),
             ),
 

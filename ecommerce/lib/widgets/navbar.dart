@@ -39,7 +39,7 @@ class NavDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.home),
+            leading: const Icon(Icons.person),
             title: const Text('Minha Conta'),
             onTap: () {
               // Adicione a lógica para navegar para a página inicial
