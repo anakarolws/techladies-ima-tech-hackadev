@@ -203,7 +203,7 @@
  <!-- foto -->
     <img src="ecommerce/assets/img/membros/renata_rodrigues_antonio_ribeiro.webp" alt="Renata Rodrigues Antonio Ribeiro " width="200px" style="border-radius: 50%; margin-bottom: 15px;"/><br>
     <!-- about -->
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=1500&pause=1200&color=7B51A6&center=true&vCenter=true&multiline=true&width=1200&height=90&lines=Formada+em+An%C3%A1lise+e+Desenvolvimento+de+Sistemas%2C+sou+resiliente%2C+estou+em+transi%C3%A7%C3%A3o+de+carreira+;saindo+da+parte+t%C3%A9cnica+de+sa%C3%BAde+bucal+para+a+Tecnologia.+;Estou+cada+vez+mais+apaixonada+e+certa+da+minha+escolha.+"  />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=1500&pause=1200&color=7B51A6&center=true&vCenter=true&multiline=true&width=1200&height=90&lines=Formada+em+An%C3%A1lise+e+Desenvolvimento+de+Sistemas%2C+sou+resiliente%2C+estou+em+transi%C3%A7%C3%A3o+de+carreira+;saindo+da+parte+odontologica+para+a+Tecnologia.+;Estou+cada+vez+mais+apaixonada+e+certa+da+minha+escolha.+"  />
     
 <br>
 <!-- github -->
