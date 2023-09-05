@@ -1,3 +1,5 @@
+import 'package:ecommerce/pages/agradecimento_page.dart';
+import 'package:ecommerce/pages/avaliacao_page.dart';
 import 'package:ecommerce/pages/configuracoes_page.dart';
 import 'package:ecommerce/pages/eletronicos_page.dart';
 import 'package:ecommerce/pages/minha_conta_page.dart';
@@ -6,16 +8,12 @@ import 'package:ecommerce/pages/smarttv_page.dart';
 import 'package:flutter/material.dart';
 
 
-
 import 'pages/cart_page.dart';
 import 'pages/home_page.dart';
 // ignore: duplicate_import
 import 'pages/minha_conta_page.dart';
 // ignore: unused_import
 import 'pages/favoritos.dart';
-
-
-
 
 void main() {
   runApp(const MyApp());
@@ -42,11 +40,9 @@ class MyApp extends StatelessWidget {
         "/smartTv": (context) => SmartTvPage(),
         "/configuracoesPage": (context) => const ConfiguracoesPage(),
         "favoritosPage": (context) => const Favoritos(),
-        
-        
+        "/avaliacaoPage":(context) => ProductReviewScreen(),
+        "/agradecimentoPage":(context) => const Agradecimento(),
       },
     );
   }
 }
-
-

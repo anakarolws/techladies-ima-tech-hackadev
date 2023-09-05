@@ -122,7 +122,6 @@ class TodosProdutos extends StatelessWidget {
                     children: [
                       Container(
                         decoration: const BoxDecoration(
-                          
                           shape: BoxShape.rectangle,
                         ),
                         width: double.infinity,
@@ -135,91 +134,109 @@ class TodosProdutos extends StatelessWidget {
                           ),
                         ),
                       ),
-
-                     //coluna com a descrição e os dois botoes separados para alterar plano de fundo 
-                     Column(
-                      children: [
-                         Container(
-                         decoration: const BoxDecoration(
-                          
-                          shape: BoxShape.rectangle,
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            produto.description!,
-                            style: GoogleFonts.roboto(
-                              color: const Color.fromRGBO(109, 68, 166, 1),
-                              fontSize: 16,
-                              fontWeight: FontWeight.normal,
+                      //coluna com a descrição e os dois botoes separados para alterar plano de fundo
+                      Column(
+                        children: [
+                          Container(
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.rectangle,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                produto.description!,
+                                style: GoogleFonts.roboto(
+                                  color: const Color.fromRGBO(109, 68, 166, 1),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Container(
-            
-                          width: 900,
-                          height: 80,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              ElevatedButton(
-                                  onPressed: () {
-                                    //Lógica para adicionar ao carrinho
-                                    print("Adicionado ao carrinho");
-                                  },
-                                  //estilo do botão
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color.fromARGB(255, 152, 122, 194),
-                                    
-                                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(15)),
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Container(
+                              width: 900,
+                              height: 80,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  ElevatedButton(
+                                      onPressed: () {
+                                        //Lógica para adicionar ao carrinho
+                                        print("Adicionado ao carrinho");
+                                      },
+                                      //estilo do botão
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor:
+                                            Color.fromARGB(255, 152, 122, 194),
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 15, vertical: 20),
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(15)),
+                                      ),
+                                      //texto do botão estilizado
+                                      child: Text(
+                                        'Add ao carrinho',
+                                        style: GoogleFonts.roboto(
+                                            color: Colors.white,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.normal),
+                                      )),
+                                  const SizedBox(width: 10),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      //Lógica para comprar agora
+                                      print('Comprar agora');
+                                    },
+                                    //estilo do botão
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor:
+                                          Color.fromRGBO(109, 68, 166, 1),
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 15, vertical: 20),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(15)),
+                                    ),
+                                    child: Text('Comprar agora',
+                                        style: GoogleFonts.roboto(
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.normal,
+                                        )),
                                   ),
-
-                                  //texto do botão estilizado
-                                  child: Text(
-                                    'Add ao carrinho',
-                                    style: GoogleFonts.roboto(
-                                        color: Colors.white,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.normal),
-                                      
-                                  )),
-                              const SizedBox(width: 10),
-                              ElevatedButton(
-                                  onPressed: () {
-                                    //Lógica para comprar agora
-                                    print('Comprar agora');
-                                  },
-
-                                   //estilo do botão
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color.fromRGBO(109, 68, 166, 1),
-                                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(15)),
-                                  ),    
-
-                                  child: Text('Comprar agora',
-                                    style: GoogleFonts.roboto(
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.normal,
-                                    )
-                                  ), 
-                                  
+                                  const SizedBox(width: 10),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, '/avaliacaoPage');
+                                      //Lógica para comprar agora
+                                      //print('Avaliar este produto');
+                                    },
+                                    //estilo do botão
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor:
+                                          Color.fromRGBO(109, 68, 166, 1),
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 15, vertical: 20),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(15)),
+                                    ),
+                                    child: Text('Avaliar produto',
+                                        style: GoogleFonts.roboto(
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.normal,
+                                        )),
                                   ),
-                            ],
+                                ],
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                      ],
-                     ),
                       const SizedBox(height: 20),
                     ],
                   ),
