@@ -7,29 +7,41 @@ import 'package:ecommerce/model/todas_categorias.dart';
 
 List<SmartPhone> smartphones = [
   SmartPhone(
-      title: "IPhone",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Vestibulum sed arcu non odio euismod.",
-      price: 6000.00,
-      discount: 30,
+      title: "iPhone 14 Pro Max",
+      description: "Sistema Operacional iOS 16 Tela Tamanho: 6,7. Material: Super Retina XDR OLED Resolução: 2796 x 1290 pixels a 460 ppi Conectividade 5G Wi-Fi EDGE Bluetooth WAP Capacidade 128 GB.",
+      price: 8488.89,
+      discount: 3,
       image: "assets/img/category/smartphones/01.webp"),
   SmartPhone(
-      title: "IPhone II",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Vestibulum sed arcu non odio euismod.",
-      price: 5000.00,
-      discount: 20,
+      title: "iPhone 13 (128GB) ",
+      description: "Sistema Operacional iOS 15 Tela Tamanho: 6,1. Material: Super Retina XDR Resolução: 2532 x 1170 pixels a 460 ppp Conectividade 5G Wi-Fi EDGE Bluetooth WAP Capacidade 128GB.",
+      price: 4525.09,
+      discount: 2,
       image: "assets/img/category/smartphones/02.webp"),
   SmartPhone(
-      title: "Xiaomi",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Vestibulum sed arcu non odio euismod.",
-      price: 2000.00,
-      discount: 10,
+      title: "Samsung Galaxy M54",
+      description: "Smartphone Samsung Galaxy M54 5G (128GB), 8GB, Processador Octa-Core, Até 2 dias de bateria, Câmera Tripla Traseira de 108MP +8MP + 2MP, Selfie de 32MP, Tela Infinita de 6.7 120Hz.",
+      price: 1899.00,
+      discount: 2,
       image: "assets/img/category/smartphones/03.webp"),
   SmartPhone(
-      title: "Xiaomi II",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Vestibulum sed arcu non odio euismod.",
-      price: 2500.00,
-      discount: 15,
+      title: "Samsung Galaxy S21",
+      description: "Smartphone Samsung Galaxy S21 FE 5G, 256GB, 8GB RAM, Processador Octa Core última geração, Bateria de 4500mAh, Câmera Tripla Traseira de 12MP + 12MP + 8MP, Selfie de 32MP, Tela Infinita de 6.4 120Hz.",
+      price: 3110.00,
+      discount: 1,
       image: "assets/img/category/smartphones/04.webp"),
+  SmartPhone(
+      title: "Samsung Z Flip5",
+      description: "Tela dobrável de 6.7 AMOLED Dinâmico 2x (Interno) e 3.4 AMOLED (Externo), 512GB, 8GB de RAM, Câmera Dupla Traseira de 12MP (Dual Pixel, OIS) + 12MP (Ultra Wide), Frontal de 10MP, Bateria de 3700mAh.",
+      price: 7999.00,
+      discount: 3,
+      image: "assets/img/category/smartphones/05.webp"),
+  SmartPhone(
+      title: "Samsung Z Fold5",
+      description: "Tela dobrável de 7.6 AMOLED Dinâmico 2x (Aberto) e 6.2 AMOLED Dinâmico (Fechado), 1TB, 12GB de RAM, Câmera Tripla Traseira de 50MP (Dual Pixel, OIS) + 12MP (Ultra Wide) + 10MP (Telefoto, OIS) Frontal de 4MP e muito mais.",
+      price: 13799.00,
+      discount: 4,
+      image: "assets/img/category/smartphones/06.webp"),
  
 ];
 
