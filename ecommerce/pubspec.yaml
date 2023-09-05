@@ -83,6 +83,24 @@ flutter:
     - assets/img/category/smartphones/02.webp
     - assets/img/category/smartphones/03.webp
     - assets/img/category/smartphones/04.webp
+
+    - assets/img/category/casainteligente/01.webp
+    - assets/img/category/casainteligente/02.webp
+    - assets/img/category/casainteligente/03.webp
+    - assets/img/category/casainteligente/04.webp
+    - assets/img/category/casainteligente/05.webp
+    - assets/img/category/casainteligente/06.webp
+    - assets/img/category/casainteligente/07.webp
+    - assets/img/category/casainteligente/08.webp
+
+    - assets/img/category/informatica/01.webp
+    - assets/img/category/informatica/02.webp
+    - assets/img/category/informatica/03.webp
+    - assets/img/category/informatica/04.webp
+    - assets/img/category/informatica/05.webp
+    - assets/img/category/informatica/06.webp
+    - assets/img/category/informatica/07.webp
+    - assets/img/category/informatica/08.webp
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
