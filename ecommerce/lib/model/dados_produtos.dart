@@ -47,29 +47,41 @@ List<SmartPhone> smartphones = [
 
 List<SmartTv> smartTv = [
   SmartTv(
-      title: "Smart TV top 1",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Vestibulum sed arcu non odio euismod.",
-      price: 5000.00,
-      discount: 30,
+      title: "Samsung QLED 4K",
+      description: " QLED, 4K, 43, 04 Entradas HDMI, 02 Entradas USB, Controle remoto único Solar Cell branco e 60 Hz de Frequência. Vídeo Tecnologia: Qled Resolução: 4K Tamanho da Tela: 43, Conexões Wi-Fi 5 Bluetooh Sim (BT 5.2)",
+      price: 3084.49,
+      discount: 2,
       image: "assets/img/category/smarttv/01.webp"),
   SmartTv(
-      title: "Smart TV top 2",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Vestibulum sed arcu non odio euismod.",
-      price: 3000.00,
-      discount: 20,
+      title: "TV 4K Samsung",
+      description: "Crystal UHD Resolução: 4K (3.840 x 2.160) Tamanho da Tela: 75 Tizen™ Smart TV Conexões Bluetooth Portas de Entrada e Saída 03 Entradas HDMI 02 Entradas USB 01 Entrada de Componente (AV) 01 Ethernet (LAN) 01 Saída de Áudio Digital (Óptica) Anynet+ (HDMI-CEC).",
+      price: 5521.35,
+      discount: 3,
       image: "assets/img/category/smarttv/02.webp"),
   SmartTv(
-      title: "Smart TV top 3",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Vestibulum sed arcu non odio euismod.",
-      price: 8000.00,
-      discount: 10,
+      title: "TV 55 LG OLED",
+      description: "LG OLED evo. A pioneira há uma década. O que faz da LG OLED evo o auge da marca OLED nº 1 do mundo? Novidades icônicas com formatos atraentes que desafiam sua imaginação. Uma imagem com mais brilho e ousada tão realista que você se sente parte da cena.",
+      price: 7955.38,
+      discount: 4,
       image: "assets/img/category/smarttv/03.webp"),
   SmartTv(
-      title: "Smart TV top 4",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Vestibulum sed arcu non odio euismod.",
-      price: 6500.00,
-      discount: 15,
+      title: "TV 55 Samsung UHD",
+      description: "Smart TV 55 Samsung UHD 4K 55CU7700 2023, Processador Crystal 4K, Tizen, 60Hz, Preto. Assista os seus conteúdos em uma exclusiva tela sem bordas aparentes, e elimine a confusão de cabos com a solução de canaletas.",
+      price: 3125.26,
+      discount: 1,
       image: "assets/img/category/smarttv/04.webp"),
+  SmartTv(
+      title: "TV 65 LG OLED",
+      description: " LG OLED evo. Dimensões que desafiam limites. Elegante em todos os sentidos. A LG OLED evo C3 mescla-se ao ambiente com molduras praticamente invisíveis6 que eliminam os limites da tela.",
+      price: 14774.38,
+      discount: 6,
+      image: "assets/img/category/smarttv/05.webp"),
+  SmartTv(
+      title: "TV TCL 50 Polegadas",
+      description: "A 50RK8600 da TCL é planejada para ser compatível com todos os aplicativos, pois conta com sistema operacional ROKU TV. Além disso, ela tem sistema de áudio Dolby e é possível espelhar o seu celular :).",
+      price: 2499.00,
+      discount: 1,
+      image: "assets/img/category/smarttv/06.webp"),
  
 ];
 
