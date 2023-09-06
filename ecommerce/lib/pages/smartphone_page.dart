@@ -3,6 +3,9 @@ import 'package:ecommerce/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
+import '../widgets/hero_details.dart';
+import '../widgets/hero_image.dart';
+
 class SmartPhonePrice extends StatefulWidget {
   const SmartPhonePrice({super.key});
 
@@ -17,23 +20,28 @@ class _SmartPhonePriceState extends State<SmartPhonePrice> {
   }
 }
 
-
 class SmartphonePage extends StatelessWidget {
   const SmartphonePage({super.key});
   final String title = "Smartphones";
 
+ 
   @override
   Widget build(BuildContext context) {
+    const String tagImage = 'hero-smartphone';
+
+    DetalhesPage detalhesPage = DetalhesPage();
+
     return Scaffold(
       appBar: CustomAppBar(title: title),
-      
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, childAspectRatio: 0.78),
         itemCount: smartphones.length,
         itemBuilder: (context, index) {
-          
-          return Card(
+          return GestureDetector(
+             onTap: () => detalhesPage.detalhesCategoria(
+                context, smartphones, index, tagImage),
+            child: Card(
            
             shape: RoundedRectangleBorder(
               side: const BorderSide(color: Color.fromRGBO(109, 68, 166, 1), width: 1),
@@ -67,14 +75,8 @@ class SmartphonePage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Container(
-                margin: const EdgeInsets.all(10),
-                child: Image.asset(
-                  smartphones[index].image!,
-                  height: 120,
-                  width: 120,
-                ),
-              ),
+              child: HeroImage(
+                      tag: '$tagImage-$index', image: smartphones[index].image!),
             ),
             Container(
                 padding: const EdgeInsets.only(bottom: 8),
@@ -97,7 +99,8 @@ class SmartphonePage extends StatelessWidget {
                       const Icon(Icons.shopping_cart_checkout,
                           color: Color.fromRGBO(109, 68, 166, 1)),
                     ])),
-          ]));
+          ]))
+          );
         },
       ),
     );
