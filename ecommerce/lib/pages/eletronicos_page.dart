@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
 import '../widgets/custom_appbar.dart';
+import '../widgets/hero_details.dart';
+import '../widgets/hero_image.dart';
 
 class EletronicosPrice extends StatefulWidget {
   const EletronicosPrice({super.key});
@@ -18,22 +20,27 @@ class _EletronicosPriceState extends State<EletronicosPrice> {
   }
 }
 
-
 class EletronicosPage extends StatelessWidget {
   const EletronicosPage({super.key});
   final String title = "Eletrônicos";
 
   @override
   Widget build(BuildContext context) {
+
+    const String tagImage = 'hero-eletronicos';
+
+    DetalhesPage detalhesPage = DetalhesPage();
+
     return Scaffold(
       appBar: CustomAppBar(title: title),
-      
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, childAspectRatio: 0.78),
         itemCount: eletronicos.length,
         itemBuilder: (context, index) {
-          return Card(
+          return GestureDetector(
+            onTap: () => detalhesPage.detalhesCategoria(context, eletronicos, index, tagImage),
+            child: Card(
               shape: RoundedRectangleBorder(
                 side: const BorderSide(
                     color: Color.fromRGBO(109, 68, 166, 1), width: 1),
@@ -65,15 +72,9 @@ class EletronicosPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.all(10),
-                    child: Image.asset(
-                      eletronicos[index].image!,
-                      height: 120,
-                      width: 140,
-                    ),
-                  ),
+               Expanded(
+                  child: HeroImage(
+                      tag: '$tagImage-$index', image: eletronicos[index].image!),
                 ),
                 Container(
                     padding: const EdgeInsets.only(bottom: 8),
@@ -96,7 +97,8 @@ class EletronicosPage extends StatelessWidget {
                           const Icon(Icons.shopping_cart_checkout,
                               color: Color.fromRGBO(109, 68, 166, 1)),
                         ])),
-              ]));
+              ]))
+          );
         },
       ),
     );

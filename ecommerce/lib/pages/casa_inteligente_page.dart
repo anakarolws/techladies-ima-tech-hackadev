@@ -3,6 +3,8 @@ import 'package:ecommerce/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
+import '../widgets/hero_details.dart';
+import '../widgets/hero_image.dart';
 
 class CasaInteligentePrice extends StatefulWidget {
   const CasaInteligentePrice({super.key});
@@ -18,23 +20,26 @@ class _CasaInteligentePriceState extends State<CasaInteligentePrice> {
   }
 }
 
-
-
 class CasaInteligentePage extends StatelessWidget {
   const CasaInteligentePage({super.key});
   final String titulo = "Casa Inteligente";
 
   @override
   Widget build(BuildContext context) {
+    const String tagImage = 'hero-casainteligente';
+
+    DetalhesPage detalhesPage = DetalhesPage();
+
     return Scaffold(
       appBar: CustomAppBar(title: titulo),
-      
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, childAspectRatio: 0.78),
         itemCount: casaInteligente.length,
         itemBuilder: (context, index) {
-          return Card(
+          return GestureDetector(
+            onTap: () => detalhesPage.detalhesCategoria(context, casaInteligente, index, tagImage),
+            child: Card(
               shape: RoundedRectangleBorder(
                 side: const BorderSide(
                     color: Color.fromRGBO(109, 68, 166, 1), width: 1),
@@ -65,15 +70,9 @@ class CasaInteligentePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.all(10),
-                    child: Image.asset(
-                      casaInteligente[index].image!,
-                      height: 120,
-                      width: 120,
-                    ),
-                  ),
+               Expanded(
+                  child: HeroImage(
+                      tag: '$tagImage-$index', image: casaInteligente[index].image!),
                 ),
                 Container(
                     padding: const EdgeInsets.only(bottom: 8),
@@ -96,7 +95,8 @@ class CasaInteligentePage extends StatelessWidget {
                           const Icon(Icons.shopping_cart_checkout,
                               color: Color.fromRGBO(109, 68, 166, 1)),
                         ])),
-              ]));
+              ]))
+          );
         },
       ),
     );
