@@ -19,7 +19,7 @@ class CartItemSamples extends StatelessWidget {
             child: Row(
               children: [
                 Radio(
-                  activeColor: Color.fromRGBO(109, 68, 166, 1),
+                  activeColor: const Color.fromRGBO(109, 68, 166, 1),
                   value: "",
                   groupValue: "",
                   onChanged: (value) {},
@@ -30,13 +30,13 @@ class CartItemSamples extends StatelessWidget {
                   child: Container(
                     height: 60,
                     width: 60,
-                    margin: EdgeInsets.only(right: 15),
+                    margin: const EdgeInsets.only(right: 15),
                     child: Image.asset(
                         "assets/img/category/eletroeletronicos/fone0$i.webp"),
                   ),
                 ),
 
-                Padding(
+                const Padding(
                   padding: EdgeInsets.symmetric(vertical: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +62,7 @@ class CartItemSamples extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5),
+                  padding: const EdgeInsets.symmetric(vertical: 5),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

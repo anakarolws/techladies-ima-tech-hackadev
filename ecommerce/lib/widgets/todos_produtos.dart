@@ -70,7 +70,11 @@ class TodosProdutos extends StatelessWidget {
                           style: const TextStyle(
                               fontSize: 15,
                               color: Color.fromRGBO(109, 68, 166, 1),
-                              fontWeight: FontWeight.bold))),
+                              fontWeight: FontWeight.bold
+                          )
+                      )
+                  ),
+                  
                   Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 10, horizontal: 5),
