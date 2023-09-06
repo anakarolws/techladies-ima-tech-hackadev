@@ -1,4 +1,5 @@
 import 'package:ecommerce/model/dados_produtos.dart';
+import 'package:ecommerce/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:like_button/like_button.dart';
@@ -97,22 +98,7 @@ class TodosProdutos extends StatelessWidget {
 
     Navigator.of(context).push(MaterialPageRoute<void>(
       builder: (context) => Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.white,
-            iconTheme: const IconThemeData(
-              color: Color.fromRGBO(109, 68, 166, 1),
-            ),
-            title: Padding(
-              padding: const EdgeInsets.only(left: 20),
-              child: Text(
-                produto.title,
-                style: GoogleFonts.roboto(
-                    color: const Color.fromRGBO(109, 68, 166, 1),
-                    fontSize: 21,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
+          appBar: CustomAppBar(title: produto.title),
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

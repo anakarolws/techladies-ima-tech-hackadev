@@ -1,33 +1,31 @@
 import 'package:ecommerce/model/dados_produtos.dart';
+import 'package:ecommerce/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
+
+class SmartPhonePrice extends StatefulWidget {
+  const SmartPhonePrice({super.key});
+
+  @override
+  State<SmartPhonePrice> createState() => _SmartPhonePriceState();
+}
+
+class _SmartPhonePriceState extends State<SmartPhonePrice> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
 
 
 class SmartphonePage extends StatelessWidget {
   const SmartphonePage({super.key});
+  final String title = "Smartphones";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        
-        iconTheme: const IconThemeData(
-          color: Color.fromRGBO(109, 68, 166, 1),
-          
-        ),
-        title: const Padding(
-          padding: EdgeInsets.only(left: 20),
-          child: Text(
-            "Smartphones",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Color.fromRGBO(109, 68, 166, 1),
-            ),
-          ),
-        ),
-      ),
+      appBar: CustomAppBar(title: title),
       
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

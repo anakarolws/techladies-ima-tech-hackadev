@@ -82,7 +82,7 @@ class CategoriesWidget extends StatelessWidget {
               child: Text(
                 category,
                 style: GoogleFonts.roboto(
-                color: Color.fromRGBO(109, 68, 166, 1),
+                color: const Color.fromRGBO(109, 68, 166, 1),
                 fontSize: 14,
                 fontWeight: FontWeight.bold
                        ),//google
