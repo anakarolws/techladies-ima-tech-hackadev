@@ -68,11 +68,14 @@ flutter:
     - assets/img/category/listCategories/2.webp
     - assets/img/category/listCategories/3.webp
 
-    - assets/img/category/eletroeletronicos/fone01.webp
-    - assets/img/category/eletroeletronicos/fone02.webp
-    - assets/img/category/eletroeletronicos/fone03.webp
-    - assets/img/category/eletroeletronicos/fone04.webp
-    - assets/img/category/eletroeletronicos/fone05.webp
+    - assets/img/category/eletroeletronicos/01.webp
+    - assets/img/category/eletroeletronicos/02.webp
+    - assets/img/category/eletroeletronicos/03.webp
+    - assets/img/category/eletroeletronicos/04.webp
+    - assets/img/category/eletroeletronicos/05.webp
+    - assets/img/category/eletroeletronicos/06.webp
+    - assets/img/category/eletroeletronicos/07.webp
+    - assets/img/category/eletroeletronicos/08.webp
 
     - assets/img/category/smarttv/01.webp
     - assets/img/category/smarttv/02.webp

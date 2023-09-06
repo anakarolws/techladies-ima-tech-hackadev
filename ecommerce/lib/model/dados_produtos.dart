@@ -87,29 +87,41 @@ List<SmartTv> smartTv = [
 
 List<Eletronicos> eletronicos = [
   Eletronicos(
-      title: "Fone de Ouvido",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Vestibulum sed arcu non odio euismod.",
-      price: 60.00,
-      discount: 30,
-      image: "assets/img/category/eletroeletronicos/fone01.webp"),
+      title: "Rotulador Eletronico",
+      description: "O rotulador eletrônico ideal para seus negócios! Com impressão em alta resolução para códigos de barras mais nítidos, logotipos e gráficos detalhados. Conecte e crie etiquetas para seu espaço de trabalho usando seu computador.",
+      price: 558.97,
+      discount: 3,
+      image: "assets/img/category/eletroeletronicos/01.webp"),
   Eletronicos(
-      title: "Fone Gamer",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Vestibulum sed arcu non odio euismod.",
-      price: 120.00,
-      discount: 20,
-      image: "assets/img/category/eletroeletronicos/fone02.webp"),
+      title: "Repelente Eletrônico",
+      description: " Ecológico, o Repelente Eletrônico Bivolt para Insetos e Roedores Branco da Key West é ideal para repelir pernilongos, ratos e até mesmo morcegos. Produto utiliza uma tecnologia de ultra-som para afastar as visitas indesejadas.",
+      price: 69.49,
+      discount: 0.5,
+      image: "assets/img/category/eletroeletronicos/02.webp"),
   Eletronicos(
-      title: "Fone Bluetooth",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Vestibulum sed arcu non odio euismod.",
-      price: 80.00,
-      discount: 10,
-      image: "assets/img/category/eletroeletronicos/fone03.webp"),
+      title: "Chuveiro Eletrônico",
+      description: "O Chuveiro Eletrônico Smart 7500w 220 Branco da Hydra tem design slim inspirado nas tendências modernas que agregam mais bom gosto à decoração do banheiro.",
+      price: 173.99,
+      discount: 1,
+      image: "assets/img/category/eletroeletronicos/03.webp"),
   Eletronicos(
-      title: "Fone Esportivo",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Vestibulum sed arcu non odio euismod.",
-      price: 80.00,
-      discount: 10,
-      image: "assets/img/category/eletroeletronicos/fone04.webp"),
+      title: "Protetor Eletrônico",
+      description: " O EPE 1008+ é um protetor eletrônico de 8 tomadas, que garante dupla proteção para os equipamentos eletrônicos, protegendo-os contra surtos de tensão, curto-circuito e sobrecarga. Chave liga/desliga inteligente.",
+      price: 59.49,
+      discount: 0,
+      image: "assets/img/category/eletroeletronicos/04.webp"),
+  Eletronicos(
+      title: "Cofre Eletrônico",
+      description: "Guarde objetos de valor como dinheiro, joias e documentos no Cofre da Goldentec e fique livre de furtos ou de perdas.",
+      price: 449.90,
+      discount: 2,
+      image: "assets/img/category/eletroeletronicos/05.webp"),
+  Eletronicos(
+      title: "Aromatizador Eletrônico",
+      description: "O Difusor de Aroma Elétrico possui uma tecnologia ultrassônica que fragmenta a solução de água e óleos essenciais em micropartículas finas que difunde ao ar em forma de vapor frio preservando as propriedades dos óleos essenciais.",
+      price: 129.90,
+      discount: 1,
+      image: "assets/img/category/eletroeletronicos/06.webp"),
  
 ];
 
