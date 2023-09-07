@@ -1,23 +1,36 @@
-import 'package:ecommerce/model/dados_produtos.dart';
-import 'package:ecommerce/model/eletronicos.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
+import 'package:ecommerce/model/dados_produtos.dart';
+import 'package:ecommerce/model/eletronicos.dart';
+
+import '../widgets/custom_appbar.dart';
+import '../widgets/hero_details.dart';
+import '../widgets/hero_image.dart';
+
+
 class EletronicosPagePrice extends StatefulWidget {
   final Eletronicos eletronico;
+  final int index;
 
-  const EletronicosPagePrice({super.key, required this.eletronico});
+  const EletronicosPagePrice({super.key, required this.eletronico, required this.index});
 
   @override
   State<EletronicosPagePrice> createState() => _EletronicosPagePriceState();
 }
 
 class _EletronicosPagePriceState extends State<EletronicosPagePrice> {
+  final String tagImage = 'hero-eletronicos';
+  DetalhesPage detalhesPage = DetalhesPage();
+
+
   String selecaoPagamentoOpcao = 'À Vista'; // o Valor padrão é á vista
   int selectedInstallments = 1;
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return GestureDetector(
+        onTap: () => detalhesPage.detalhesCategoria(context, eletronicos, widget.index, tagImage),
+        child: Card(
       shape: RoundedRectangleBorder(
         side:
             const BorderSide(color: Color.fromRGBO(109, 68, 166, 1), width: 1),
@@ -52,14 +65,8 @@ class _EletronicosPagePriceState extends State<EletronicosPagePrice> {
             ),
           ),
           Expanded(
-            child: Container(
-              margin: const EdgeInsets.all(10),
-              child: Image.asset(
-                widget.eletronico.image!,
-                height: 120,
-                width: 140,
-              ),
-            ),
+            child: HeroImage(
+                tag: "$tagImage-$widget.index", image: widget.eletronico.image!),
           ),
           Container(
             padding: const EdgeInsets.only(bottom: 8),
@@ -125,6 +132,7 @@ class _EletronicosPagePriceState extends State<EletronicosPagePrice> {
           ),
         ],
       ),
+    )
     );
   }
 
@@ -163,6 +171,7 @@ class EletronicosList extends StatelessWidget {
       itemBuilder: (context, index) {
         return EletronicosPagePrice(
           eletronico: eletros[index],
+          index: index,
         );
       },
     );
@@ -170,28 +179,14 @@ class EletronicosList extends StatelessWidget {
 }
 
 class EletronicosPage extends StatelessWidget {
+  static const String title = "Eletrônicos";
+
   const EletronicosPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          iconTheme: const IconThemeData(
-            color: Color.fromRGBO(109, 68, 166, 1),
-          ),
-          title: const Padding(
-            padding: EdgeInsets.only(left: 20),
-            child: Text(
-              "Eletrônicos",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(109, 68, 166, 1),
-              ),
-            ),
-          ),
-        ),
+        appBar: const CustomAppBar(title: title),
         body: EletronicosList(
           eletros: eletronicos,
         ));

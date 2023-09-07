@@ -4,23 +4,32 @@ import 'package:ecommerce/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
+import '../widgets/hero_details.dart';
+import '../widgets/hero_image.dart';
+
 class SmartPhonePrice extends StatefulWidget {
   final SmartPhone smartphone; // Corrigido para Smartphone
+  final int index;
 
   // Corrigido: Remova "super.key" e adicione "Key? key"
-  const SmartPhonePrice({Key? key, required this.smartphone}) : super(key: key);
+  const SmartPhonePrice({Key? key, required this.smartphone, required this.index}) : super(key: key);
 
   @override
   State<SmartPhonePrice> createState() => _SmartPhonePriceState();
 }
 
 class _SmartPhonePriceState extends State<SmartPhonePrice> {
+  final String tagImage = 'hero-smartphone';
+  DetalhesPage detalhesPage = DetalhesPage();
+
   String selecaoPagamentoOpcao = 'À Vista';
   int selectedInstallments = 1;
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return GestureDetector(
+        onTap: () => detalhesPage.detalhesCategoria(context, smartphones, widget.index, tagImage),
+        child: Card(
       shape: RoundedRectangleBorder(
         side:
             const BorderSide(color: Color.fromRGBO(109, 68, 166, 1), width: 1),
@@ -55,14 +64,8 @@ class _SmartPhonePriceState extends State<SmartPhonePrice> {
             ),
           ),
           Expanded(
-            child: Container(
-              margin: const EdgeInsets.all(10),
-              child: Image.asset(
-                widget.smartphone.image!,
-                height: 120,
-                width: 140,
-              ),
-            ),
+            child: HeroImage(
+                tag: "$tagImage-$widget.index", image: widget.smartphone.image!),
           ),
           Container(
             padding: const EdgeInsets.only(bottom: 8),
@@ -128,6 +131,7 @@ class _SmartPhonePriceState extends State<SmartPhonePrice> {
           ),
         ],
       ),
+    )
     );
   }
 
@@ -166,6 +170,7 @@ class SmartphoneList extends StatelessWidget {
       itemBuilder: (context, index) {
         return SmartPhonePrice(
           smartphone: smartphones[index],
+          index: index,
         );
       },
     );
@@ -176,12 +181,11 @@ class SmartphonePage extends StatelessWidget {
 
   const SmartphonePage({super.key});
 
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: "Smartphones",
-      ),
+      appBar: const CustomAppBar(title: "Smartphones"),
       body: SmartphoneList(
         smartphones: smartphones,
       ),

@@ -1,26 +1,37 @@
-import 'package:ecommerce/model/dados_produtos.dart';
-import 'package:ecommerce/model/smart_tv.dart'; // Importe a classe SmartTv
-import 'package:ecommerce/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
+import 'package:ecommerce/model/dados_produtos.dart';
+import 'package:ecommerce/model/smart_tv.dart'; // Importe a classe SmartTv
+import 'package:ecommerce/widgets/custom_appbar.dart';
+
+import 'package:ecommerce/widgets/hero_details.dart';
+import 'package:ecommerce/widgets/hero_image.dart';
+
 class SmartTvPrice extends StatefulWidget {
   final SmartTv smartTv; // Corrigido para SmartTv
+  final int index;
 
   // Corrigido: Remova "super.key" e adicione "Key? key"
-  const SmartTvPrice({Key? key, required this.smartTv}) : super(key: key);
+  const SmartTvPrice({Key? key, required this.smartTv, required this.index})
+      : super(key: key);
 
   @override
   State<SmartTvPrice> createState() => _SmartTvPriceState();
 }
 
 class _SmartTvPriceState extends State<SmartTvPrice> {
+  final String tagImage = 'hero-smarttv';
+  DetalhesPage detalhesPage = DetalhesPage();
+
   String selecaoPagamentoOpcao = 'À Vista';
   int selectedInstallments = 1;
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return GestureDetector(
+        onTap: () => detalhesPage.detalhesCategoria(context, smartTv, widget.index, tagImage),
+        child: Card(
       shape: RoundedRectangleBorder(
         side:
             const BorderSide(color: Color.fromRGBO(109, 68, 166, 1), width: 1),
@@ -55,14 +66,8 @@ class _SmartTvPriceState extends State<SmartTvPrice> {
             ),
           ),
           Expanded(
-            child: Container(
-              margin: const EdgeInsets.all(10),
-              child: Image.asset(
-                widget.smartTv.image!, // Corrigido para smartTv
-                height: 120,
-                width: 140,
-              ),
-            ),
+            child: HeroImage(
+                tag: "$tagImage-$widget.index", image: widget.smartTv.image!),
           ),
           Container(
             padding: const EdgeInsets.only(bottom: 8),
@@ -128,6 +133,7 @@ class _SmartTvPriceState extends State<SmartTvPrice> {
           ),
         ],
       ),
+    )
     );
   }
 
@@ -167,6 +173,7 @@ class SmartTvList extends StatelessWidget {
       itemBuilder: (context, index) {
         return SmartTvPrice(
           smartTv: smartTvs[index], // Corrigido para smartTv
+          index: index,
         );
       },
     );
@@ -174,15 +181,14 @@ class SmartTvList extends StatelessWidget {
 }
 
 class SmartTvPage extends StatelessWidget {
-  const SmartTvPage(
-      {Key? key}); // Corrigido: Remova "super.key" se não for usar
+  const SmartTvPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const String title = "Smart TVs";
+
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: "Smart TVs",
-      ),
+      appBar: const CustomAppBar(title: title),
       body: SmartTvList(
         smartTvs: smartTv, // Corrigido para smartTvs
       ),
