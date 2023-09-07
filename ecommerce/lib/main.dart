@@ -14,7 +14,8 @@ import 'pages/home_page.dart';
 import 'pages/minha_conta_page.dart';
 // ignore: unused_import
 import 'pages/favoritos.dart';
-
+import 'package:login/pages/login_page.dart';
+import 'package:login/pages/splash_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         "favoritosPage": (context) => const Favoritos(),
         "/avaliacaoPage":(context) => ProductReviewScreen(),
         "/agradecimentoPage":(context) => const Agradecimento(),
+        '/splash':(_)=>const SplashPage(),
       },
     );
   }
