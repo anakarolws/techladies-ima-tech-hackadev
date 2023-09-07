@@ -5,6 +5,7 @@ import 'package:ecommerce/pages/eletronicos_page.dart';
 import 'package:ecommerce/pages/minha_conta_page.dart';
 import 'package:ecommerce/pages/smartphone_page.dart';
 import 'package:ecommerce/pages/smarttv_page.dart';
+import 'package:ecommerce/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -14,8 +15,7 @@ import 'pages/home_page.dart';
 import 'pages/minha_conta_page.dart';
 // ignore: unused_import
 import 'pages/favoritos.dart';
-import 'package:login/pages/login_page.dart';
-import 'package:login/pages/splash_page.dart';
+import 'package:ecommerce/pages/smarttv_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => const HomePage(),
         "cartPage":(context) => const CartPage(),
-        "/minhaContaPage": (context) => const MinhaContaPage(),
+        "/minhaContaPage": (context) =>  LoginPage(),
         "/eletronicosPage": (context) => EletronicosPage(),
         "/smartphonePage": (context) => SmartphonePage(),
         "/smartTv": (context) => SmartTvPage(),
