@@ -99,7 +99,7 @@ class EletronicosPage extends StatelessWidget {
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
                                           color:
-                                              Color.fromRGBO(109, 68, 166, 1))), 
+                                              Color.fromRGBO(109, 68, 166, 1))), const Text('Opções de Pagamento'),
                                   IconButton(
                                     icon: Icon(Icons.credit_card),
                                     onPressed: () {
@@ -149,3 +149,4 @@ class EletronicosPage extends StatelessWidget {
     return totalValue / numberOfInstallments;
   }
 }
+
