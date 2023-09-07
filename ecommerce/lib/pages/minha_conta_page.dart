@@ -1,5 +1,6 @@
+import 'package:ecommerce/pages/login_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:login/login_controller.dart';
+import 'package:ecommerce/pages/minha_conta_page.dart';
 
 class LoginPage extends StatelessWidget {
   final LoginController _controller = LoginController();
