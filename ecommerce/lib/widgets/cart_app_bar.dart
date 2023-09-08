@@ -18,7 +18,7 @@ class CartAppBar extends StatelessWidget {
             child: const Icon(
               Icons.arrow_back,
               size: 28,
-              color: Color.fromRGBO(109, 68, 166, 1),
+              color: Colors.grey,
             ),
           ),
           const Padding(padding: EdgeInsets.only(left: 20),
@@ -26,8 +26,7 @@ class CartAppBar extends StatelessWidget {
               "Carrinho",
               style: TextStyle(
                 fontSize: 23,
-                fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(109, 68, 166, 1),
+                color: Colors.purple,
               ),
             ),
           ),
@@ -35,7 +34,7 @@ class CartAppBar extends StatelessWidget {
           const Icon(
             Icons.more_vert,
             size: 30,
-            color: Color.fromRGBO(109, 68, 166, 1),
+            color: Colors.grey,
           ),
         ],
       ),
