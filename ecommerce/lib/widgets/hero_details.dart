@@ -61,49 +61,51 @@ class DetalhesPage {
                                   children: [
                                     ElevatedButton(
                                         onPressed: () {
-                                          //Lógica para adicionar ao carrinho
-                                          print("Adicionado ao carrinho");
+                                          //Lógica para Comprar Agora
+                                          print("Comprar agora");
                                         },
                                         //estilo do botão
                                         style: ElevatedButton.styleFrom(
                                           backgroundColor: const Color.fromARGB(
                                               255, 152, 122, 194),
                                           padding: const EdgeInsets.symmetric(
-                                              horizontal: 15, vertical: 20),
+                                              horizontal: 10, vertical: 10),
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(15)),
                                         ),
                                         //texto do botão estilizado
                                         child: Text(
-                                          'Add ao carrinho',
+                                          'Comprar agora',
                                           style: GoogleFonts.roboto(
                                               color: Colors.white,
-                                              fontSize: 14,
+                                              fontSize: 13,
                                               fontWeight: FontWeight.normal),
                                         )),
                                     const SizedBox(width: 10),
                                     ElevatedButton(
                                       onPressed: () {
-                                        //Lógica para comprar agora
-                                        print('Comprar agora');
+                                        //Lógica para add ao carrinho
+                                        print('Add ao carrinho');
                                       },
                                       //estilo do botão
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: const Color.fromRGBO(
                                             109, 68, 166, 1),
                                         padding: const EdgeInsets.symmetric(
-                                            horizontal: 15, vertical: 20),
+                                            horizontal: 40, vertical: 10),
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
                                                 BorderRadius.circular(15)),
                                       ),
-                                      child: Text('Comprar agora',
-                                          style: GoogleFonts.roboto(
-                                            color: Colors.white,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.normal,
-                                          )),
+
+                                      child: const Row(
+                                        children: [
+                                          Icon(Icons.shopping_cart, 
+                                          color: Colors.white,
+                                          size: 13,)
+                                        ],
+                                      )
                                     ),
                                     const SizedBox(width: 10),
                                     ElevatedButton(
@@ -118,7 +120,7 @@ class DetalhesPage {
                                         backgroundColor: const Color.fromRGBO(
                                             109, 68, 166, 1),
                                         padding: const EdgeInsets.symmetric(
-                                            horizontal: 15, vertical: 20),
+                                            horizontal: 10, vertical: 10),
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
                                                 BorderRadius.circular(15)),
@@ -126,7 +128,7 @@ class DetalhesPage {
                                       child: Text('Avaliar produto',
                                           style: GoogleFonts.roboto(
                                             color: Colors.white,
-                                            fontSize: 14,
+                                            fontSize: 13,
                                             fontWeight: FontWeight.normal,
                                           )),
                                     ),
