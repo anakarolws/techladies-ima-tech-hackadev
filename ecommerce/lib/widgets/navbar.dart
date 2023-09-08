@@ -58,10 +58,6 @@ class NavDrawer extends StatelessWidget {
               // Adicione a lógica para navegar para a página inicial
               Navigator.pop(context); // Fecha o drawer
               Navigator.pushNamed(context, '/eletronicosPage');
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => EletronicosPage()),
-              // );
             },
           ),
           ListTile(
@@ -71,10 +67,6 @@ class NavDrawer extends StatelessWidget {
               // Adicione a lógica para navegar para a página inicial
               Navigator.pop(context); // Fecha o drawer
               Navigator.pushNamed(context, '/smartphonePage');
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => SmartphonePage()),
-              // );
             },
           ),
           ListTile(
@@ -84,10 +76,24 @@ class NavDrawer extends StatelessWidget {
               // Adicione a lógica para navegar para a página inicial
               Navigator.pop(context); // Fecha o drawer
               Navigator.pushNamed(context, '/smartTv');
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => SmartTv()),
-              // );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.highlight),
+            title: const Text('Casa Inteligente'),
+            onTap: () {
+              // Adicione a lógica para navegar para a página inicial
+              Navigator.pop(context); // Fecha o drawer
+              Navigator.pushNamed(context, '/casaInteligentePage');
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.laptop_chromebook),
+            title: const Text('Informática'),
+            onTap: () {
+              // Adicione a lógica para navegar para a página inicial
+              Navigator.pop(context); // Fecha o drawer
+              Navigator.pushNamed(context, '/informaticaPage');
             },
           ),
           ListTile(
@@ -97,10 +103,6 @@ class NavDrawer extends StatelessWidget {
               // Adicione a lógica para navegar para a página de configurações
               Navigator.pop(context); // Fecha o drawer
               Navigator.pushNamed(context, '/configuracoesPage');
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => const ConfiguracoesPage()),
-              // );
             },
           ),
           // Adicione mais itens de menu conforme necessário

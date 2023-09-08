@@ -1,7 +1,9 @@
 import 'package:ecommerce/pages/agradecimento_page.dart';
 import 'package:ecommerce/pages/avaliacao_page.dart';
+import 'package:ecommerce/pages/casa_inteligente_page.dart';
 import 'package:ecommerce/pages/configuracoes_page.dart';
 import 'package:ecommerce/pages/eletronicos_page.dart';
+import 'package:ecommerce/pages/informatica_page.dart';
 import 'package:ecommerce/pages/minha_conta_page.dart';
 import 'package:ecommerce/pages/smartphone_page.dart';
 import 'package:ecommerce/pages/smarttv_page.dart';
@@ -40,6 +42,8 @@ class MyApp extends StatelessWidget {
         "/avaliacaoPage":(context) => const ProductReviewScreen(),
         "/agradecimentoPage":(context) => const Agradecimento(),
         '/splash':(_)=>const SplashPage(),
+        "/casaInteligentePage": (context) => const CasaInteligentePage(),
+        "/informaticaPage": (context) => const InformaticaPage()
       },
     );
   }
