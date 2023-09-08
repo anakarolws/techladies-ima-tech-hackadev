@@ -1,3 +1,5 @@
+import 'package:ecommerce/pages/casa_inteligente_page.dart';
+import 'package:ecommerce/pages/informatica_page.dart';
 import 'package:ecommerce/pages/smartphone_page.dart';
 import 'package:ecommerce/pages/smarttv_page.dart';
 import 'package:flutter/material.dart';
@@ -173,6 +175,22 @@ class SearchBarDelegate extends SearchDelegate<String> {
               context,
               MaterialPageRoute(builder: (context) => const SmartTvPage()),
             );
+          },
+        ),
+        ListTile(
+          title: const Text('Casa Inteligente'),
+          onTap: () {
+            query = 'Casa Inteligente';
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const CasaInteligentePage()));
+          },
+        ),
+        ListTile(
+          title: const Text('Informática'),
+          onTap: () {
+            query = 'Informática';
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const InformaticaPage()));
           },
         ),
         // Adicione mais sugestões de pesquisa conforme necessário
