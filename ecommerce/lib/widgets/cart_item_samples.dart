@@ -19,7 +19,7 @@ class CartItemSamples extends StatelessWidget {
             child: Row(
               children: [
                 Radio(
-                  activeColor: Color.fromRGBO(109, 68, 166, 1),
+                  activeColor: const Color.fromRGBO(109, 68, 166, 1),
                   value: "",
                   groupValue: "",
                   onChanged: (value) {},
@@ -30,13 +30,13 @@ class CartItemSamples extends StatelessWidget {
                   child: Container(
                     height: 60,
                     width: 60,
-                    margin: EdgeInsets.only(right: 15),
+                    margin: const EdgeInsets.only(right: 15),
                     child: Image.asset(
                         "assets/img/category/eletroeletronicos/fone0$i.webp"),
                   ),
                 ),
 
-                Padding(
+                const Padding(
                   padding: EdgeInsets.symmetric(vertical: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,19 +62,19 @@ class CartItemSamples extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5),
+                  padding: const EdgeInsets.symmetric(vertical: 5),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.delete,
                         color: Colors.red,
                       ),
                       Row(
                         children: [
                           Container(
-                            padding: EdgeInsets.all(4),
+                            padding: const EdgeInsets.all(4),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(20),
@@ -85,14 +85,14 @@ class CartItemSamples extends StatelessWidget {
                                     blurRadius: 10,
                                   )
                                 ]),
-                            child: Icon(
+                            child: const Icon(
                               Icons.add,
                               size: 18,
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.symmetric(horizontal: 10),
-                            child: Text(
+                            margin: const EdgeInsets.symmetric(horizontal: 10),
+                            child: const Text(
                               "01",
                               style: TextStyle(
                                 fontSize: 12,
@@ -102,7 +102,7 @@ class CartItemSamples extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.all(4),
+                            padding: const EdgeInsets.all(4),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(20),
@@ -113,7 +113,7 @@ class CartItemSamples extends StatelessWidget {
                                     blurRadius: 10,
                                   )
                                 ]),
-                            child: Icon(
+                            child: const Icon(
                               Icons.remove,
                               size: 18,
                             ),

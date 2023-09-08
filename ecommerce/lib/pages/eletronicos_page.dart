@@ -1,5 +1,4 @@
 import 'package:ecommerce/model/dados_produtos.dart';
-import 'package:ecommerce/model/eletronicos.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
@@ -101,7 +100,7 @@ class EletronicosPage extends StatelessWidget {
                                           color:
                                               Color.fromRGBO(109, 68, 166, 1))), const Text('Opções de Pagamento'),
                                   IconButton(
-                                    icon: Icon(Icons.credit_card),
+                                    icon: const Icon(Icons.credit_card),
                                     onPressed: () {
                                       // Exibe o modal com as informações do pagamento
                                       showModalBottomSheet(
@@ -113,13 +112,13 @@ class EletronicosPage extends StatelessWidget {
                                                 Eletronicos.price! * 0.9;
                                             return Column (children: [
                                               ListTile(
-                                                title: Text(
+                                                title: const Text(
                                                     'Preço à vista com desconto:'),
                                                 subtitle: Text(
                                                     'R\$ ${priceWithDiscount.toStringAsFixed(2)}'),
                                               ),
                                               ListTile(
-                                                  title: Text(
+                                                  title: const Text(
                                                       'Opções de Parcelamento:'),
                                                   subtitle: Column(
                                                       crossAxisAlignment:
@@ -144,7 +143,7 @@ class EletronicosPage extends StatelessWidget {
   }
 
   double calculateParcelValue(double price, int numberOfInstallments) {
-    final interestRate = 0.02; // 2% de juros
+    const interestRate = 0.02; // 2% de juros
     final totalValue = price * (1 + interestRate);
     return totalValue / numberOfInstallments;
   }

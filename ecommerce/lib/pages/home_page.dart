@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
             Text(
               'Tech Place',
               style: GoogleFonts.roboto(
-                color: Color.fromRGBO(109, 68, 166, 1),
+                color: const Color.fromRGBO(109, 68, 166, 1),
               ),
             ),
           ],
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                       child: Text(
                         "Categorias",
                         style: GoogleFonts.roboto(
-                            color: Color.fromRGBO(109, 68, 166, 1),
+                            color: const Color.fromRGBO(109, 68, 166, 1),
                             fontSize: 21,
                             fontWeight: FontWeight.bold),
                       ),
@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                   child: Text(
                     "Todos os produtos",
                     style: GoogleFonts.roboto(
-                        color: Color.fromRGBO(109, 68, 166, 1),
+                        color: const Color.fromRGBO(109, 68, 166, 1),
                         fontSize: 21,
                         fontWeight: FontWeight.bold),
                   ),

@@ -18,8 +18,8 @@ class CartPage extends StatelessWidget {
             //container com os dados dos produtos do carrinho
             Container(
               height: 700,
-              padding: EdgeInsets.only(top: 15),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.only(top: 15),
+              decoration: const BoxDecoration(
                 color: Color(0xFFEDECF2),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(35),
@@ -28,20 +28,20 @@ class CartPage extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  CartItemSamples(),
+                  const CartItemSamples(),
                   Container(
-                    margin: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
-                    padding: EdgeInsets.all(10),
+                    margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+                    padding: const EdgeInsets.all(10),
                     child: Row(
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            color: Color.fromRGBO(109, 68, 166, 1),
+                            color: const Color.fromRGBO(109, 68, 166, 1),
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: Icon(Icons.add, color: Colors.white),
+                          child: const Icon(Icons.add, color: Colors.white),
                         ),
-                        Padding(
+                        const Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10),
                           child: Text(
                             "Código de cupom",
@@ -68,7 +68,7 @@ class CartPage extends StatelessWidget {
             activeColor: Colors.white, // cor do texto  e botão ativados
             iconSize: 30, // tamanho do botão
             tabBackgroundColor: Colors.purple,
-            tabMargin: EdgeInsets.symmetric(vertical: 20, horizontal: 0), // cor de fundo do botão ativado
+            tabMargin: const EdgeInsets.symmetric(vertical: 20, horizontal: 0), // cor de fundo do botão ativado
             padding: const EdgeInsets.symmetric(
                 horizontal: 60,
                 vertical: 20), // preenchimento da barra de navegação

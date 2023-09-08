@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProductReviewScreen extends StatefulWidget {
+  const ProductReviewScreen({super.key});
+
   @override
   _ProductReviewScreenState createState() => _ProductReviewScreenState();
 }
@@ -30,20 +32,20 @@ class _ProductReviewScreenState extends State<ProductReviewScreen> {
                 fontSize: 17,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _buildStarRating(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/agradecimentoPage');
               },
-              child: Text('Enviar Avaliação'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromRGBO(109, 68, 166, 1),
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                backgroundColor: const Color.fromRGBO(109, 68, 166, 1),
+                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
               ),
+              child: const Text('Enviar Avaliação'),
             ),
           ],
         ),

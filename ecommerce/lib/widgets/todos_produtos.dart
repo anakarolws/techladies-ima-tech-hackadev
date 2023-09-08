@@ -140,8 +140,8 @@ class TodosProdutos extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Container(
+                            padding: const EdgeInsets.all(8.0),
+                            child: SizedBox(
                               width: 900,
                               height: 80,
                               child: Row(
@@ -155,8 +155,8 @@ class TodosProdutos extends StatelessWidget {
                                       //estilo do botão
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor:
-                                            Color.fromARGB(255, 152, 122, 194),
-                                        padding: EdgeInsets.symmetric(
+                                            const Color.fromARGB(255, 152, 122, 194),
+                                        padding: const EdgeInsets.symmetric(
                                             horizontal: 10, vertical: 10),
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
@@ -179,8 +179,8 @@ class TodosProdutos extends StatelessWidget {
                                     //estilo do botão
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor:
-                                          Color.fromRGBO(109, 68, 166, 1),
-                                      padding: EdgeInsets.symmetric(
+                                          const Color.fromRGBO(109, 68, 166, 1),
+                                      padding: const EdgeInsets.symmetric(
                                           horizontal: 40, vertical: 10),
                                       shape: RoundedRectangleBorder(
                                           borderRadius:
@@ -204,8 +204,8 @@ class TodosProdutos extends StatelessWidget {
                                     //estilo do botão
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor:
-                                          Color.fromRGBO(109, 68, 166, 1),
-                                      padding: EdgeInsets.symmetric(
+                                          const Color.fromRGBO(109, 68, 166, 1),
+                                      padding: const EdgeInsets.symmetric(
                                           horizontal: 10, vertical: 10),
                                       shape: RoundedRectangleBorder(
                                           borderRadius:

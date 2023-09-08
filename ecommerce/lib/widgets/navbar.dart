@@ -150,7 +150,7 @@ class SearchBarDelegate extends SearchDelegate<String> {
           onTap: () {
             query = 'Eletrônicos';
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => EletronicosPage()));
+                MaterialPageRoute(builder: (context) => const EletronicosPage()));
           },
         ),
         ListTile(
@@ -159,7 +159,7 @@ class SearchBarDelegate extends SearchDelegate<String> {
             query = 'Smartphones';
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => SmartphonePage()),
+              MaterialPageRoute(builder: (context) => const SmartphonePage()),
             );
           },
         ),
@@ -169,7 +169,7 @@ class SearchBarDelegate extends SearchDelegate<String> {
             query = 'SmartTvs';
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => SmartTvPage()),
+              MaterialPageRoute(builder: (context) => const SmartTvPage()),
             );
           },
         ),

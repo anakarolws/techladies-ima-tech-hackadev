@@ -13,14 +13,14 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: 3)).then((_) => Navigator.of(context).pushReplacementNamed('/login')
+    Future.delayed(const Duration(seconds: 3)).then((_) => Navigator.of(context).pushReplacementNamed('/login')
     );
   }
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(162, 231, 161, 231),
-      child: Center(
+      color: const Color.fromARGB(162, 231, 161, 231),
+      child: const Center(
         child: CircularProgressIndicator(
           color: Colors.white54,
         ),
