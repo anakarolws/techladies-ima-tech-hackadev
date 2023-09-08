@@ -6,12 +6,16 @@ class LoginPage extends StatelessWidget {
 
   LoginPage({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text(
+          'Login',
+          style: TextStyle(color: Colors.purple),
+        ),
+        backgroundColor: Colors.white,
+        iconTheme: const IconThemeData(color: Colors.grey),
       ),
       body: Container(
         padding: const EdgeInsets.all(28),
@@ -36,7 +40,7 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 15),
             ValueListenableBuilder<bool>(
               valueListenable: _controller.inLoader,
-              builder: (_,inLoader,__) => inLoader
+              builder: (_, inLoader, __) => inLoader
                   ? const CircularProgressIndicator()
                   : ElevatedButton(
                       onPressed: () {
@@ -48,8 +52,7 @@ class LoginPage extends StatelessWidget {
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                  content:
-                                      Text('Falha ao realizar login'),
+                                  content: Text('Falha ao realizar login'),
                                   duration: Duration(seconds: 3),
                                 ),
                               );
@@ -57,7 +60,22 @@ class LoginPage extends StatelessWidget {
                           },
                         );
                       },
-                      child: const Text('Login'),
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.purple), // Cor de fundo
+                        foregroundColor: MaterialStateProperty.all<Color>(
+                            Colors.white), // Cor do texto
+                      ),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10), // Define o padding
+                        child: const Text(
+                          'Login',
+                          style: TextStyle(
+                            fontSize: 16, // Tamanho da fonte desejado
+                          ),
+                        ),
+                      ),
                     ),
             ),
           ],
