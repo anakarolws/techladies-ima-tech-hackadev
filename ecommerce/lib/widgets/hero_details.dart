@@ -1,3 +1,5 @@
+// ignore_for_file: duplicate_import, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, prefer_const_constructors
+
 import 'dart:html';
 
 import 'package:flutter/material.dart';
@@ -31,6 +33,7 @@ class DetalhesPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             // Container com a imagem do produto
+            // ignore: sized_box_for_whitespace
             Container(
               width: double.infinity,
               child: Hero(
@@ -103,6 +106,7 @@ class DetalhesPage extends StatelessWidget {
                 ),
               ),
             ),
+            // ignore: avoid_unnecessary_containers
             Container(
               child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -121,18 +125,30 @@ class DetalhesPage extends StatelessWidget {
               ],)
             ),
 
-            
+              //Container Produtos relacionados texto
+              Container(
+                alignment: Alignment.centerLeft,
+                      margin: const EdgeInsets.symmetric(
+                       vertical: 20, horizontal: 10),
+                     child: Text('Produtos Relacionados',
+                      style: GoogleFonts.roboto(
+                      color: Color.fromRGBO(109, 68, 166, 1),
+                      fontSize: 21,
+                      fontWeight: FontWeight.bold,
+                      ))),
 
             // Container com a ListView horizontal
+            // ignore: sized_box_for_whitespace
             Container(
+                                
               height: 200,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: categoria.length,
                 itemBuilder: (context, i) {
                   return Container(
-                    margin: const EdgeInsets.all(8.0),
-                    child: Column(
+                      margin: const EdgeInsets.all(8.0),
+                      child: Column(
                       children: [
                         Image.asset(
                           categoria[i].image!,
@@ -140,6 +156,8 @@ class DetalhesPage extends StatelessWidget {
                           height: 100,
                         ),
                         Text(categoria[i].title),
+
+                      
                       ],
                     ),
                   );
