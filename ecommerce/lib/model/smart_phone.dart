@@ -1,7 +1,7 @@
 class SmartPhone {
   String? title;
   String? description;
-  double? price;
+  double price;
   double? discount;
   String? image;
 

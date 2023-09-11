@@ -1,13 +1,14 @@
 import 'package:ecommerce/model/botao_favoritos.dart';
 import 'package:ecommerce/model/dados_produtos.dart';
 import 'package:ecommerce/model/eletronicos.dart';
+import 'package:ecommerce/widgets/priceWidget.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:like_button/like_button.dart';
 
 import '../widgets/custom_appbar.dart';
 import '../widgets/hero_details.dart';
 import '../widgets/hero_image.dart';
-import 'package:intl/intl.dart';
 
 class EletronicosPrice extends StatefulWidget {
   const EletronicosPrice({Key? key});
@@ -45,7 +46,7 @@ class EletronicosPage extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute<void>(
                   builder: (context) => DetalhesPage(
-                    categoria: casaInteligente,
+                    categoria: eletronicos,
                     index: index,
                     tagValor: tagImage,
                   ),
@@ -114,14 +115,9 @@ class EletronicosPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          "R\$ ${NumberFormat.currency(locale: 'pt_BR', symbol: '', decimalDigits: 2).format(eletronicos[index].price)}", // formato de duas casas decimais 
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromRGBO(109, 68, 166, 1),
-                          ),
-                        ),
+                        PriceWidget(
+                            price: eletronicos[index].price,
+                            color: const Color.fromRGBO(109, 68, 166, 1)),
                         const Icon(
                           Icons.shopping_cart_checkout,
                           color: Color.fromRGBO(109, 68, 166, 1),

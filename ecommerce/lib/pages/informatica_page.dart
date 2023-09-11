@@ -1,12 +1,12 @@
 import 'package:ecommerce/model/botao_favoritos.dart';
 import 'package:ecommerce/model/dados_produtos.dart';
 import 'package:ecommerce/widgets/custom_appbar.dart';
+import 'package:ecommerce/widgets/priceWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
 import '../widgets/hero_details.dart';
 import '../widgets/hero_image.dart';
-import 'package:intl/intl.dart';
 
 class InformaticaPrice extends StatefulWidget {
   const InformaticaPrice({super.key});
@@ -30,8 +30,7 @@ class InformaticaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     const String tagImage = 'hero-informatica';
 
-
-     return Scaffold(
+    return Scaffold(
       appBar: CustomAppBar(title: titulo),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -115,14 +114,9 @@ class InformaticaPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                            "R\$ ${NumberFormat.currency(locale: 'pt_BR', symbol: '', decimalDigits: 2).format(informatica[index].price)}", // formato de duas casas decimais
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromRGBO(109, 68, 166, 1),
-                          ),
-                        ),
+                        PriceWidget(
+                            price: informatica[index].price,
+                            color: const Color.fromRGBO(109, 68, 166, 1)),
                         const Icon(
                           Icons.shopping_cart_checkout,
                           color: Color.fromRGBO(109, 68, 166, 1),
