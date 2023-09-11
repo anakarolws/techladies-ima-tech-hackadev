@@ -7,7 +7,7 @@ import 'package:like_button/like_button.dart';
 import '../widgets/custom_appbar.dart';
 import '../widgets/hero_details.dart';
 import '../widgets/hero_image.dart';
-
+import 'package:intl/intl.dart';
 
 class EletronicosPrice extends StatefulWidget {
   const EletronicosPrice({Key? key});
@@ -31,8 +31,7 @@ class EletronicosPage extends StatelessWidget {
   Widget build(BuildContext context) {
     const String tagImage = 'hero-eletronicos';
 
-
-     return Scaffold(
+    return Scaffold(
       appBar: CustomAppBar(title: titulo),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -116,7 +115,7 @@ class EletronicosPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "R\$${eletronicos[index].price}",
+                          "R\$ ${NumberFormat.currency(locale: 'pt_BR', symbol: '', decimalDigits: 2).format(eletronicos[index].price)}", // formato de duas casas decimais 
                           style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,

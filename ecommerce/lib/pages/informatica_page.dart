@@ -6,6 +6,7 @@ import 'package:like_button/like_button.dart';
 
 import '../widgets/hero_details.dart';
 import '../widgets/hero_image.dart';
+import 'package:intl/intl.dart';
 
 class InformaticaPrice extends StatefulWidget {
   const InformaticaPrice({super.key});
@@ -115,7 +116,7 @@ class InformaticaPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "R\$${informatica[index].price}",
+                            "R\$ ${NumberFormat.currency(locale: 'pt_BR', symbol: '', decimalDigits: 2).format(informatica[index].price)}", // formato de duas casas decimais
                           style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,

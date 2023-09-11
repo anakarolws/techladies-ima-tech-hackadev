@@ -6,6 +6,7 @@ import 'package:like_button/like_button.dart';
 
 import '../widgets/hero_details.dart';
 import '../widgets/hero_image.dart';
+import 'package:intl/intl.dart';
 
 class CasaInteligentePrice extends StatefulWidget {
   const CasaInteligentePrice({Key? key});
@@ -29,7 +30,7 @@ class CasaInteligentePage extends StatelessWidget {
   Widget build(BuildContext context) {
     const String tagImage = 'hero-casainteligente';
 
-   return Scaffold(
+    return Scaffold(
       appBar: CustomAppBar(title: titulo),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -113,7 +114,7 @@ class CasaInteligentePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "R\$${casaInteligente[index].price}",
+                          "R\$ ${NumberFormat.currency(locale: 'pt_BR', symbol: '', decimalDigits: 2).format(casaInteligente[index].price)}", // formato de duas casas decimais
                           style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,

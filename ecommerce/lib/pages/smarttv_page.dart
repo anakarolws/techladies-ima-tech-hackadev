@@ -6,6 +6,7 @@ import 'package:ecommerce/widgets/hero_image.dart';
 
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
+import 'package:intl/intl.dart';
 
 class SmartTvPrice extends StatefulWidget {
   const SmartTvPrice({Key? key});
@@ -29,8 +30,6 @@ class SmartTvPage extends StatelessWidget {
   Widget build(BuildContext context) {
     const String tagImage = 'hero-smarttv';
 
-   
-
     return Scaffold(
       appBar: CustomAppBar(title: title),
       body: GridView.builder(
@@ -38,14 +37,14 @@ class SmartTvPage extends StatelessWidget {
           crossAxisCount: 2,
           childAspectRatio: 0.78,
         ),
-        itemCount: smartTv.length, 
+        itemCount: smartTv.length,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute<void>(
                   builder: (context) => DetalhesPage(
-                    categoria: smartTv, 
+                    categoria: smartTv,
                     index: index,
                     tagValor: tagImage,
                   ),
@@ -116,7 +115,7 @@ class SmartTvPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "R\$${smartTv[index].price}",
+                          "R\$ ${NumberFormat.currency(locale: 'pt_BR', symbol: '', decimalDigits: 2).format(smartTv[index].price)}", // formato de duas casas decimais
                           style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
