@@ -1,7 +1,5 @@
 // ignore_for_file: duplicate_import, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, prefer_const_constructors
 
-import 'dart:html';
-
 import 'package:ecommerce/widgets/priceWidget.dart';
 import 'package:ecommerce/widgets/price_installment_widget.dart';
 import 'package:flutter/material.dart';
@@ -10,10 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'custom_appbar.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import 'custom_appbar.dart';
 
 class DetalhesPage extends StatelessWidget {
   final dynamic categoria;

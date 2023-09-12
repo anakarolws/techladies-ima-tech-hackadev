@@ -11,7 +11,7 @@ class _FavoritosBotaoState extends State<FavoritosBotao> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(mensagem),
-        duration: Duration(seconds: 2),
+        duration: const Duration(seconds: 2),
       ),
     );
   }
@@ -35,7 +35,7 @@ class _FavoritosBotaoState extends State<FavoritosBotao> {
             },
             icon: Icon(
               isFavorito ? Icons.favorite : Icons.favorite_border,
-              color: isFavorito ? Color.fromRGBO(109, 68, 166, 1) : null,
+              color: isFavorito ? const Color.fromRGBO(109, 68, 166, 1) : null,
             ),
           ),
         ],

@@ -3,7 +3,7 @@ import 'package:ecommerce/model/dados_produtos.dart';
 import 'package:ecommerce/widgets/custom_appbar.dart';
 import 'package:ecommerce/widgets/priceWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:like_button/like_button.dart';
+
 
 import '../widgets/hero_details.dart';
 import '../widgets/hero_image.dart';
@@ -69,7 +69,7 @@ class InformaticaPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
+                        /* Container(
                           padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             color: const Color.fromRGBO(109, 68, 166, 1),
@@ -83,7 +83,7 @@ class InformaticaPage extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                        ),
+                        ), */
                         // Botão favoritos
                         FavoritosBotao(),
                       ],

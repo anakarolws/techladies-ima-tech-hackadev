@@ -1,10 +1,9 @@
 import 'package:ecommerce/model/botao_favoritos.dart';
 import 'package:ecommerce/model/dados_produtos.dart';
-import 'package:ecommerce/model/eletronicos.dart';
+
 import 'package:ecommerce/widgets/priceWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:like_button/like_button.dart';
+
 
 import '../widgets/custom_appbar.dart';
 import '../widgets/hero_details.dart';
@@ -71,7 +70,7 @@ class EletronicosPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
+                 /*        Container(
                           padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             color: const Color.fromRGBO(109, 68, 166, 1),
@@ -85,7 +84,7 @@ class EletronicosPage extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                        ),
+                        ), */
                         FavoritosBotao(),
                       ],
                     ),

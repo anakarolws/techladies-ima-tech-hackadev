@@ -150,7 +150,7 @@ class TodosProdutos extends StatelessWidget {
                                   ElevatedButton(
                                       onPressed: () {
                                         //Lógica para comprar agora
-                                        print("Comprar agora");
+                                     
                                       },
                                       //estilo do botão
                                       style: ElevatedButton.styleFrom(
@@ -174,7 +174,7 @@ class TodosProdutos extends StatelessWidget {
                                   ElevatedButton(
                                     onPressed: () {
                                       //Lógica para add ao carrinho
-                                      print('Add ao carrinho');
+                                      
                                     },
                                     //estilo do botão
                                     style: ElevatedButton.styleFrom(

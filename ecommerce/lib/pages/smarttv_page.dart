@@ -68,7 +68,7 @@ class SmartTvPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
+                        /* Container(
                           padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             color: const Color.fromRGBO(109, 68, 166, 1),
@@ -82,7 +82,7 @@ class SmartTvPage extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                        ),
+                        ), */
                         //Botão Favoritos
                         FavoritosBotao(),
                       ],
