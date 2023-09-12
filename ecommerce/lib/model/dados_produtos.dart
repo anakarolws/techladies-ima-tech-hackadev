@@ -72,7 +72,7 @@ List<SmartTv> smartTv = [
       image: "assets/img/category/smarttv/04.webp"),
   SmartTv(
       title: "TV 65 LG OLED",
-      description: " LG OLED evo. Dimensões que desafiam limites. Elegante em todos os sentidos. A LG OLED evo C3 mescla-se ao ambiente com molduras praticamente invisíveis6 que eliminam os limites da tela.",
+      description: " LG OLED evo. Dimensões que desafiam limites. Elegante em todos os sentidos. A LG OLED evo C3 mescla-se ao ambiente com molduras praticamente invisíveis que eliminam os limites da tela.",
       price: 14774.38,
       discount: 6,
       image: "assets/img/category/smarttv/05.webp"),
@@ -87,7 +87,7 @@ List<SmartTv> smartTv = [
 
 List<Eletronicos> eletronicos = [
   Eletronicos(
-      title: "Rotulador Eletronico",
+      title: "Rotulador Eletrônico",
       description: "O rotulador eletrônico ideal para seus negócios! Com impressão em alta resolução para códigos de barras mais nítidos, logotipos e gráficos detalhados. Conecte e crie etiquetas para seu espaço de trabalho usando seu computador.",
       price: 558.97,
       discount: 3,
@@ -112,13 +112,13 @@ List<Eletronicos> eletronicos = [
       image: "assets/img/category/eletroeletronicos/04.webp"),
   Eletronicos(
       title: "Cofre Eletrônico",
-      description: "Guarde objetos de valor como dinheiro, joias e documentos no Cofre da Goldentec e fique livre de furtos ou de perdas.",
+      description: "Guarde objetos de valor como dinheiro, jóias e documentos no Cofre da Goldentec e fique livre de furtos ou de perdas.",
       price: 449.90,
       discount: 2,
       image: "assets/img/category/eletroeletronicos/05.webp"),
   Eletronicos(
       title: "Aromatizador Eletrônico",
-      description: "O Difusor de Aroma Elétrico possui uma tecnologia ultrassônica que fragmenta a solução de água e óleos essenciais em micropartículas finas que difunde ao ar em forma de vapor frio preservando as propriedades dos óleos essenciais.",
+      description: "O Difusor de Aroma Elétrico possui uma tecnologia ultrassônica que fragmenta a solução de água e óleos essenciais em micropartículas finas que difundem ao ar em forma de vapor frio preservando as propriedades dos óleos essenciais.",
       price: 129.90,
       discount: 1,
       image: "assets/img/category/eletroeletronicos/06.webp"),
@@ -146,7 +146,7 @@ List<Informatica> informatica = [
       image: "assets/img/category/informatica/03.webp"),
   Informatica(
       title: "HD Toshiba 1TB",
-      description: " Hd 1tb sata 3 32mb 5700rpm 3,5 dt01aba100v toshibase você está procurando um disco rígido para melhorar o desempenho do seu computador, o toshiba dt01aba100v é o que você precisa, sendo hdd.",
+      description: " Hd 1tb sata 3 32mb 5700rpm 3,5 dt01aba100v toshiba se você está procurando um disco rígido para melhorar o desempenho do seu computador, o toshiba dt01aba100v é o que você precisa, sendo hdd.",
       price: 763.72,
       discount: 10,
       image: "assets/img/category/informatica/04.webp"),
@@ -168,12 +168,12 @@ List<Informatica> informatica = [
 List<CasaInteligente> casaInteligente = [
   CasaInteligente(
       title: "Sensor Inteligente",
-      description: "Sensor de presença inteligentes Wi-Fi são ideais para aplicações em ambientes residenciais ou comerciais. Fornece reconhecimento de presença e movimento a uma distância de 6 metros com ângulos de ativação de até 110°. Tem um design compacto e elegante.",
+      description: "Sensores de presença inteligente Wi-Fi são ideais para aplicações em ambientes residenciais ou comerciais. Fornece reconhecimento de presença e movimento a uma distância de 6 metros com ângulos de ativação de até 110°. Tem um design compacto e elegante.",
       price: 76.64,
       discount: 8,
       image: "assets/img/category/casainteligente/01.webp"),
   CasaInteligente(
-      title: "Video Porteiro Inteligente",
+      title: "Vídeo Porteiro Inteligente",
       description: "Com o vídeo porteiro inteligente Wi-Fi SE220 é possível atender visitas via aplicativo, de onde estiver. O SE220 câmera com imagem HD, visão noturna e detecção de movimento.",
       price: 289.89,
       discount: 2,
@@ -198,7 +198,7 @@ List<CasaInteligente> casaInteligente = [
       image: "assets/img/category/casainteligente/05.webp"),
   CasaInteligente(
       title: "Echo (4ª geração)",
-      description: "Smart Speaker Casa Inteligente e Alexa - Branco. Novo visual, novo som ainda melhor Echo proporciona agudos altos, médios dinâmicos e graves profundos que garantem um som de alta qualidade que se adapta ao seu cômodo. Controle músicas apenas com sua voz.",
+      description: "Smart Speaker Casa Inteligente e Alexa - Branco. Novo visual, novo som ainda melhor. Echo proporciona agudos altos, médios dinâmicos e graves profundos que garantem um som de alta qualidade que se adapta ao seu cômodo. Controle músicas apenas com sua voz.",
       price: 772.74,
       discount: 10,
       image: "assets/img/category/casainteligente/06.webp"),

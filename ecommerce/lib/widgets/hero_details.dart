@@ -49,6 +49,7 @@ class DetalhesPage extends StatelessWidget {
               style: GoogleFonts.roboto(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
+                color: const Color.fromRGBO(109, 68, 166, 1)
               ),
             ),
           ),
@@ -71,7 +72,7 @@ class DetalhesPage extends StatelessWidget {
                 PriceWidget(
                   price: produto.price,
                   color: const Color.fromRGBO(109, 68, 166, 1),
-                  fontSize: 20,
+                  fontSize: 18,
                 ),
                 Text(
                   'À vista com 10% de desconto: R\$ ${(produto.price * 0.9).toStringAsFixed(2)}',
@@ -90,8 +91,8 @@ class DetalhesPage extends StatelessWidget {
             child: Text(
               produto.description!,
               style: GoogleFonts.roboto(
-                color: const Color.fromRGBO(109, 68, 166, 1),
-                fontSize: 16,
+                color: Color.fromARGB(255, 0, 0, 0),
+                fontSize: 15,
                 fontWeight: FontWeight.normal,
               ),
             ),
@@ -108,7 +109,13 @@ class DetalhesPage extends StatelessWidget {
                 itemCount: 5,
                 itemSize: 15,
                 itemPadding: EdgeInsets.symmetric(horizontal: 4),
-                itemBuilder: (context, _) => Icon(Icons.favorite),
+                itemBuilder: (context, _) {
+          return Icon(
+            Icons.star,
+            color: Colors.yellow, // Defina a cor desejada aqui
+          );
+        },
+
                 glowColor: Color.fromRGBO(109, 68, 166, 1),
                 onRatingUpdate: (index) {},
               )
