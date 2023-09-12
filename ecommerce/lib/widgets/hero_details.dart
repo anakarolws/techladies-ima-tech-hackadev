@@ -28,7 +28,7 @@ class DetalhesPage extends StatelessWidget {
     var produto = categoria[index];
 
     return Scaffold(
-      appBar: CustomAppBar(title: produto.title),
+      appBar: CustomAppBar(title: produto.toString()),
       body: SingleChildScrollView(
         child:
             Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
@@ -70,7 +70,7 @@ class DetalhesPage extends StatelessWidget {
           // Container com o valor do produto
           Container(
             padding: const EdgeInsets.all(8.0),
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 PriceWidget(
