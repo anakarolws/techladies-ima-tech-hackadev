@@ -11,4 +11,10 @@ class Eletronicos {
       required this.price,
       required this.discount,
       required this.image});
+
+  @override
+  String toString() {
+   
+    return 'Eletrônicos';
+  }
 }

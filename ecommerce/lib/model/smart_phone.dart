@@ -11,4 +11,10 @@ class SmartPhone {
       required this.price,
       required this.discount,
       required this.image});
+
+  @override
+  String toString() {
+   
+    return 'Smartphones';
+  }
 }
