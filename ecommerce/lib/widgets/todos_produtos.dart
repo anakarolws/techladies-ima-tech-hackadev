@@ -1,8 +1,10 @@
+import 'package:ecommerce/model/botao_favoritos.dart';
 import 'package:ecommerce/model/dados_produtos.dart';
-import 'package:ecommerce/widgets/custom_appbar.dart';
+import 'package:ecommerce/widgets/hero_image.dart';
+
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:like_button/like_button.dart';
+
+import 'hero_details.dart';
 
 class TodosProdutos extends StatelessWidget {
   const TodosProdutos({Key? key}) : super(key: key);
@@ -10,14 +12,27 @@ class TodosProdutos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var produtos = todasCategorias.getTodosProdutos();
+    String tag = 'hero-produto';
+
     return SliverGrid(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, childAspectRatio: 0.78),
       delegate: SliverChildBuilderDelegate(
+        childCount: produtos.length,
         (context, index) {
           var produto = produtos[index];
           return GestureDetector(
-            onTap: () => _irDetalhesPage(context, index),
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (context) => DetalhesPage(
+                    categoria: produtos,
+                    index: index,
+                    tagValor: tag,
+                  ),
+                ),
+              );
+            },
             child: Card(
                 shape: RoundedRectangleBorder(
                   side: const BorderSide(
@@ -31,39 +46,14 @@ class TodosProdutos extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          padding: const EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                              color: const Color.fromRGBO(109, 68, 166, 1),
-                              borderRadius: BorderRadius.circular(20)),
-                          child: Text(
-                            "-${produto.discount}%",
-                            style: const TextStyle(
-                              fontSize: 12,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
                         //botão favoritos
-                        const LikeButton(
-                            animationDuration: Duration(seconds: 0))
+                        FavoritosBotao(),
                       ],
                     ),
                   ),
                   Expanded(
-                    child: Hero(
-                      tag: 'hero-produto-$index',
-                      child: Container(
-                        margin: const EdgeInsets.all(10),
-                        child: Image.asset(
-                          produto.image!,
-                          height: 120,
-                          width: 120,
-                        ),
-                      ),
-                    ),
-                  ),
+                      child:
+                          HeroImage(tag: '$tag-$index', image: produto.image!)),
                   Container(
                       padding: const EdgeInsets.only(bottom: 8),
                       child: Text(produto.title!,
@@ -88,149 +78,7 @@ class TodosProdutos extends StatelessWidget {
                 ])),
           );
         },
-        childCount: produtos.length,
       ),
     );
-  }
-
-  void _irDetalhesPage(BuildContext context, int index) {
-    var produto = todasCategorias.getTodosProdutos()[index];
-
-    Navigator.of(context).push(MaterialPageRoute<void>(
-      builder: (context) => Scaffold(
-          appBar: CustomAppBar(title: produto.title),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.rectangle,
-                        ),
-                        width: double.infinity,
-                        child: Hero(
-                          tag: "hero-produto-$index",
-                          child: Image.asset(
-                            produto.image!,
-                            width: 400,
-                            height: 300,
-                          ),
-                        ),
-                      ),
-                      //coluna com a descrição e os dois botoes separados para alterar plano de fundo
-                      Column(
-                        children: [
-                          Container(
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.rectangle,
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                produto.description!,
-                                style: GoogleFonts.roboto(
-                                  color: const Color.fromRGBO(109, 68, 166, 1),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: SizedBox(
-                              width: 900,
-                              height: 80,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  ElevatedButton(
-                                      onPressed: () {
-                                        //Lógica para comprar agora
-                                     
-                                      },
-                                      //estilo do botão
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor:
-                                            const Color.fromARGB(255, 152, 122, 194),
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 10, vertical: 10),
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(15)),
-                                      ),
-                                      //texto do botão estilizado
-                                      child: Text(
-                                        'Comprar agora',
-                                        style: GoogleFonts.roboto(
-                                            color: Colors.white,
-                                            fontSize: 13,
-                                            fontWeight: FontWeight.normal),
-                                      )),
-                                  const SizedBox(width: 10),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      //Lógica para add ao carrinho
-                                      
-                                    },
-                                    //estilo do botão
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor:
-                                          const Color.fromRGBO(109, 68, 166, 1),
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 40, vertical: 10),
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(15)),
-                                    ),
-                                    child: const Row(
-                                        children: [
-                                          Icon(Icons.shopping_cart, 
-                                          color: Colors.white,
-                                          size: 13,)
-                                        ],
-                                      ),
-                                  ),
-                                  const SizedBox(width: 10),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.pushNamed(context, '/avaliacaoPage');
-                                      //Lógica para comprar agora
-                                      //print('Avaliar este produto');
-                                    },
-                                    //estilo do botão
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor:
-                                          const Color.fromRGBO(109, 68, 166, 1),
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 10, vertical: 10),
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(15)),
-                                    ),
-                                    child: Text('Avaliar produto',
-                                        style: GoogleFonts.roboto(
-                                          color: Colors.white,
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.normal,
-                                        )),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 20),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          )),
-    ));
   }
 }
