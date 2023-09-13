@@ -1,10 +1,14 @@
 import 'package:ecommerce/model/botao_favoritos.dart';
+
 import 'package:ecommerce/model/dados_produtos.dart';
+
 import 'package:ecommerce/widgets/hero_image.dart';
+
 
 import 'package:flutter/material.dart';
 
-import 'hero_details.dart';
+import 'hero_todascategorias/hero_detailsall.dart';
+
 
 class TodosProdutos extends StatelessWidget {
   const TodosProdutos({Key? key}) : super(key: key);
@@ -25,8 +29,8 @@ class TodosProdutos extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute<void>(
-                  builder: (context) => DetalhesPage(
-                    categoria: produtos,
+                  builder: (context) => DetalhesPageAll(
+                    categorias: produtos,
                     index: index,
                     tagValor: tag,
                   ),
@@ -82,3 +86,4 @@ class TodosProdutos extends StatelessWidget {
     );
   }
 }
+

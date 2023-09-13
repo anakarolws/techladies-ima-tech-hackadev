@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
               ]),
             ),
 
-            // Inclusão da classe MelhoresProdutos
+            // Inclusão de todos os produtos
             const TodosProdutos(),
           ],
         ),
