@@ -14,7 +14,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         title,
         style: GoogleFonts.roboto(
           fontSize: 20,
-          color: Colors.purple,
+          color: const Color.fromRGBO(109, 68, 166, 1),
+          
         ),
       ),
     );

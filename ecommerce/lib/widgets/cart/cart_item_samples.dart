@@ -32,7 +32,7 @@ class CartItemSamples extends StatelessWidget {
                     width: 60,
                     margin: const EdgeInsets.only(right: 15),
                     child: Image.asset(
-                        "assets/img/category/eletroeletronicos/fone0$i.webp"),
+                        "assets/img/category/eletroeletronicos/0$i.webp"),
                   ),
                 ),
 
