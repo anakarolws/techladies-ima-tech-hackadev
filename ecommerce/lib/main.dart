@@ -1,5 +1,6 @@
 import 'package:ecommerce/pages/agradecimento_page.dart';
 import 'package:ecommerce/pages/avaliacao_page.dart';
+import 'package:ecommerce/pages/cadastro_produtos/produtos_page.dart';
 import 'package:ecommerce/pages/casa_inteligente_page.dart';
 import 'package:ecommerce/pages/configuracoes_page.dart';
 import 'package:ecommerce/pages/eletronicos_page.dart';
@@ -8,6 +9,7 @@ import 'package:ecommerce/pages/minha_conta_page.dart';
 import 'package:ecommerce/pages/smartphone_page.dart';
 import 'package:ecommerce/pages/smarttv_page.dart';
 import 'package:ecommerce/pages/splash_page.dart';
+import 'package:ecommerce/widgets/detalheproduto.dart';
 import 'package:flutter/material.dart';
 
 
@@ -44,7 +46,9 @@ class MyApp extends StatelessWidget {
         "/agradecimentoPage":(context) => const Agradecimento(),
         '/splash':(_)=>const SplashPage(),
         "/casaInteligentePage": (context) => const CasaInteligentePage(),
-        "/informaticaPage": (context) => const InformaticaPage()
+        "/informaticaPage": (context) => const InformaticaPage(),
+        "/produtosPage": (context) => const ProdutosPage(),
+        
       },
     );
   }

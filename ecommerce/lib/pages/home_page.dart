@@ -63,6 +63,42 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
 
+                   Row(
+                    children: [
+                       //container com o título de produtos
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 10),
+                      child: Text(
+                        "Cadastrar produtos",
+                        style: GoogleFonts.roboto(
+                            color: const Color.fromRGBO(109, 68, 166, 1),
+                            fontSize: 21,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    
+                    //botão rota página de cadastro
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromRGBO(109, 68, 166, 1),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)
+                        ),
+                        ),
+                      onPressed: () => Navigator.pushNamed(context, '/produtosPage'), 
+                      child: Text(
+                      "Cadastrar",
+                      style: GoogleFonts.roboto(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    ),
+                    ],
+                   ),
+
                     //container com o título de categorias
                     Container(
                       alignment: Alignment.centerLeft,

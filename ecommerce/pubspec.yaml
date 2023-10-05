@@ -41,6 +41,7 @@ dependencies:
   google_fonts: ^5.1.0
   flutter_rating_bar: ^4.0.1
   intl: ^0.17.0
+  http: ^1.1.0
  
 
 dev_dependencies:
