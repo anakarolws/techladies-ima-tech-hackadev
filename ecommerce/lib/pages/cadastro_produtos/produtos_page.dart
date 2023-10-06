@@ -13,7 +13,7 @@ class ProdutosPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "/detalheproduto":(context) => DetalheProduto(),
+        "/detalheproduto": (context) => DetalheProduto(),
       },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -48,7 +48,21 @@ class ConteudoPagina extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: produtos),
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back), // Ícone de seta de voltar
+          onPressed: () {
+            // Ação ao pressionar o botão de voltar
+            Navigator.pushNamed(context, '/');// Pode ser usado para voltar à tela anterior
+          },
+        ),
+        title: const Text(
+          'Cadastrar Produto',
+          style: TextStyle(color: Colors.purple),
+        ),
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.grey),
+      ),
       body: Center(
         child: Container(
           width: 300,
@@ -144,6 +158,13 @@ class ConteudoPagina extends State {
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.purple,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            minimumSize: Size(120, 50),
+                          ),
                           onPressed: () async {
                             if (_formKey.currentState!.validate()) {
                               await produtosController.fetchProdutosPost(

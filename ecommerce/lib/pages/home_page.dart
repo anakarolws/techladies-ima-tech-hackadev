@@ -20,21 +20,33 @@ class _HomePageState extends State<HomePage> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
-              Icons.devices_other,
-              color: Color.fromRGBO(109, 68, 166, 1),
+            const SizedBox(width: 8),
+            Image.asset(
+              './img/category/icone/branco.png',
+              width: 20,
+              height: 20,
             ),
             const SizedBox(width: 8),
             Text(
               'Tech Place',
               style: GoogleFonts.roboto(
-                color: const Color.fromRGBO(109, 68, 166, 1),
+                color: Colors.white,
+                fontSize: 25,
+                shadows: [
+                  const Shadow(
+                    color: Color.fromARGB(255, 66, 66, 66), // Cor da sombra
+                    offset: Offset(
+                        2, 2), // Deslocamento da sombra (horizontal, vertical)
+                    blurRadius: 3, // Raio de desfoque da sombra
+                  ),
+                ],
               ),
-            ),
+            )
           ],
         ),
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(color: Colors.grey),
+        toolbarHeight: 60, // Altura da Appbar
+        backgroundColor: Colors.purple,
+        iconTheme: const IconThemeData(color: Colors.white),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.search),
@@ -45,8 +57,9 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       drawer: const NavDrawer(),
+      backgroundColor: const Color.fromARGB(255, 247, 246, 246),
       body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
         child: CustomScrollView(
           slivers: [
             SliverList(
@@ -62,75 +75,93 @@ class _HomePageState extends State<HomePage> {
                             topRight: Radius.circular(35)),
                       ),
                     ),
+                    Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          // Texto centralizado
+                          Text(
+                            "Cadastrar produtos",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 66, 66, 66),
+                            ),
+                          ),
+                          // Espaçamento entre o texto e o botão
+                          SizedBox(height: 20),
+                          // Botão centralizado
 
-                   Row(
-                    children: [
-                       //container com o título de produtos
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      margin: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 10),
-                      child: Text(
-                        "Cadastrar produtos",
-                        style: GoogleFonts.roboto(
-                            color: const Color.fromRGBO(109, 68, 166, 1),
-                            fontSize: 21,
-                            fontWeight: FontWeight.bold),
+                          Container(
+                            width: 140, // Defina a largura desejada aqui
+                            height: 40,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.purple,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                              onPressed: () =>
+                                  Navigator.pushNamed(context, '/produtosPage'),
+                              child: const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.assignment,
+                                    color: Colors.white,
+                                    size: 18,
+                                  ),
+                                  SizedBox(width: 8),
+                                  Text(
+                                    "Cadastrar",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
                       ),
                     ),
-                    
-                    //botão rota página de cadastro
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(109, 68, 166, 1),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)
-                        ),
-                        ),
-                      onPressed: () => Navigator.pushNamed(context, '/produtosPage'), 
-                      child: Text(
-                      "Cadastrar",
-                      style: GoogleFonts.roboto(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    ),
-                    ],
-                   ),
-
+                    SizedBox(height: 20),
                     //container com o título de categorias
                     Container(
-                      alignment: Alignment.centerLeft,
-                      margin: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 10),
-                      child: Text(
-                        "Categorias",
-                        style: GoogleFonts.roboto(
-                            color: const Color.fromRGBO(109, 68, 166, 1),
-                            fontSize: 21,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
+                        alignment: Alignment.centerLeft,
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 5, horizontal: 10),
+                        child: Text(
+                          "Categorias",
+                          style: GoogleFonts.roboto(
+                            color: Color.fromARGB(255, 66, 66, 66),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )),
 
                     //classe com layout para categoria de produtos
                     const CategoriesWidget(),
                   ],
                 ),
-
+                SizedBox(height: 15),
                 //itens - titulo acima dos produtos
                 Container(
-                  alignment: Alignment.centerLeft,
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                  child: Text(
-                    "Todos os produtos",
-                    style: GoogleFonts.roboto(
-                        color: const Color.fromRGBO(109, 68, 166, 1),
-                        fontSize: 21,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
+                    alignment: Alignment.centerLeft,
+                    margin:
+                        const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    child: Text(
+                      "Todos os Produtos",
+                      style: GoogleFonts.roboto(
+                        color: Color.fromARGB(255, 66, 66, 66),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
               ]),
             ),
 

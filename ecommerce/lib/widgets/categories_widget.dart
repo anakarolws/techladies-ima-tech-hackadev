@@ -15,7 +15,6 @@ class CategoriesWidget extends StatelessWidget {
   final String smartTv = "Smart TV";
   final String casaInteligente = "Casa Inteligente";
   final String informatica = "Informática";
-  
 
   void navigateToCategoryPage(BuildContext context, String category) {
     Map<String, Widget Function()> categoryPages = {
@@ -23,7 +22,7 @@ class CategoriesWidget extends StatelessWidget {
       smartphone: () => const SmartphonePage(),
       smartTv: () => const SmartTvPage(),
       casaInteligente: () => const CasaInteligentePage(),
-      informatica:() => const InformaticaPage()
+      informatica: () => const InformaticaPage()
     };
 
     if (categoryPages.containsKey(category)) {
@@ -38,7 +37,13 @@ class CategoriesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Separar lógica de construção de cartão de categoria para função _buildCategoryCard
-    final categoriesName = [eletronico, smartphone, smartTv, casaInteligente, informatica];
+    final categoriesName = [
+      eletronico,
+      smartphone,
+      smartTv,
+      casaInteligente,
+      informatica
+    ];
 
     //mesmo usando ListView ocorreu estouro de altura, onde o recomendado foi encapsular em um Container ou SizedBox para incluir uma altura
     return SizedBox(
@@ -63,8 +68,17 @@ class CategoriesWidget extends StatelessWidget {
         padding: const EdgeInsets.all(5),
 
         decoration: BoxDecoration(
-          color: const Color.fromRGBO(156, 131, 192, 0.10),
+          color: Colors.white,
           borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5), // Cor da sombra
+              spreadRadius: 1, // Raio de propagação da sombra
+              blurRadius: 4, // Raio de desfoque da sombra
+              offset:
+                  Offset(0, 3), // Deslocamento da sombra (horizontal, vertical)
+            ),
+          ],
         ),
 
         //container de cada categoria
@@ -76,16 +90,14 @@ class CategoriesWidget extends StatelessWidget {
               width: 100,
               height: 50,
             ),
-
             Padding(
               padding: const EdgeInsets.all(5),
               child: Text(
                 category,
                 style: GoogleFonts.roboto(
-                color: const Color.fromRGBO(109, 68, 166, 1),
-                fontSize: 14,
-                fontWeight: FontWeight.bold
-                       ),//google
+                    color: const Color.fromARGB(255, 121, 121, 121),
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold), //google
               ),
             ),
           ],

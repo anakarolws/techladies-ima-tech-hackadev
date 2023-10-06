@@ -76,6 +76,13 @@
       "price": 15000,
       "category": "Smartphone",
       "id": 11
+    },
+    {
+      "title": "Tv",
+      "description": "tv samsung",
+      "price": 1500,
+      "category": "Smart TV",
+      "id": 12
     }
   ]
 }
