@@ -9,10 +9,10 @@ class ConfiguracoesPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Configurações',
-          style: TextStyle(color: Colors.purple),
+          style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(color: Colors.grey),
+        backgroundColor: Colors.purple,
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: const Center(
         child: Text(

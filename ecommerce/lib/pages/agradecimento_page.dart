@@ -7,9 +7,12 @@ class Agradecimento extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Avaliações do produto', style: TextStyle(color: Colors.purple),),
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(color: Colors.grey),
+        title: const Text(
+          'Avaliações do produto',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.purple,
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: const Center(
         child: Text(

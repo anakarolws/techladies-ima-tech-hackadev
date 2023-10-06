@@ -52,12 +52,11 @@ class CasaInteligentePage extends StatelessWidget {
             },
             child: Card(
               shape: RoundedRectangleBorder(
-                side: const BorderSide(
-                  color: Color.fromRGBO(109, 68, 166, 1),
-                  width: 1,
-                ),
+                side: const BorderSide(color: Colors.transparent, width: 0),
                 borderRadius: BorderRadius.circular(10.0),
               ),
+              elevation: 4, // Adicionei elevação para destacar o Card
+              margin: const EdgeInsets.all(8),
               child: Column(
                 children: [
                   Padding(
@@ -98,9 +97,8 @@ class CasaInteligentePage extends StatelessWidget {
                     child: Text(
                       casaInteligente[index].title!,
                       style: const TextStyle(
-                        fontSize: 15,
+                        fontSize: 16,
                         color: Color.fromRGBO(109, 68, 166, 1),
-                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
@@ -114,10 +112,10 @@ class CasaInteligentePage extends StatelessWidget {
                       children: [
                         PriceWidget(
                             price: casaInteligente[index].price,
-                            color: const Color.fromRGBO(109, 68, 166, 1)),
+                            color: Color.fromARGB(255, 66, 66, 66)),
                         const Icon(
                           Icons.shopping_cart_checkout,
-                          color: Color.fromRGBO(109, 68, 166, 1),
+                          color: Color.fromARGB(255, 121, 121, 121),
                         ),
                       ],
                     ),

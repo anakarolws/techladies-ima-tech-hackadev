@@ -12,21 +12,19 @@ import 'package:ecommerce/pages/splash_page.dart';
 import 'package:ecommerce/widgets/detalheproduto.dart';
 import 'package:flutter/material.dart';
 
-
-
 import 'pages/cart_page.dart';
 import 'pages/home_page.dart';
 import 'pages/favoritos.dart';
+
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Tech Ladies',
@@ -35,22 +33,20 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         "/": (context) => const HomePage(),
-        "cartPage":(context) => const CartPage(),
-        "/minhaContaPage": (context) =>  LoginPage(),
+        "cartPage": (context) => const CartPage(),
+        "/minhaContaPage": (context) => LoginPage(),
         "/eletronicosPage": (context) => const EletronicosPage(),
         "/smartphonePage": (context) => const SmartphonePage(),
         "/smartTv": (context) => const SmartTvPage(),
         "/configuracoesPage": (context) => const ConfiguracoesPage(),
         "favoritosPage": (context) => const Favoritos(),
-        "/avaliacaoPage":(context) => const ProductReviewScreen(),
-        "/agradecimentoPage":(context) => const Agradecimento(),
-        '/splash':(_)=>const SplashPage(),
+        "/avaliacaoPage": (context) => const ProductReviewScreen(),
+        "/agradecimentoPage": (context) => const Agradecimento(),
+        '/splash': (_) => const SplashPage(),
         "/casaInteligentePage": (context) => const CasaInteligentePage(),
         "/informaticaPage": (context) => const InformaticaPage(),
         "/produtosPage": (context) => const ProdutosPage(),
-        
       },
     );
   }
 }
-

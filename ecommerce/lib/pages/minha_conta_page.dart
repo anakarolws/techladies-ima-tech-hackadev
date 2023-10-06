@@ -12,10 +12,10 @@ class LoginPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Login',
-          style: TextStyle(color: Colors.purple),
+          style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(color: Colors.grey),
+        backgroundColor: Colors.purple,
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Container(
         padding: const EdgeInsets.all(28),

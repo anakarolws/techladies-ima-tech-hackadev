@@ -8,14 +8,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
-      iconTheme: const IconThemeData(color: Colors.grey),
+      backgroundColor: Colors.purple,
+      iconTheme: const IconThemeData(color: Colors.white),
       title: Text(
         title,
         style: GoogleFonts.roboto(
           fontSize: 20,
-          color: const Color.fromRGBO(109, 68, 166, 1),
-          
+          color: Colors.white,
         ),
       ),
     );

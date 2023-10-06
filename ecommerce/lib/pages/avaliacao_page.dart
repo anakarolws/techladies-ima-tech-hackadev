@@ -16,10 +16,10 @@ class _ProductReviewScreenState extends State<ProductReviewScreen> {
       appBar: AppBar(
         title: const Text(
           'Avaliações do Produto',
-          style: TextStyle(color: Colors.purple),
+          style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(color: Colors.grey),
+        backgroundColor: Colors.purple,
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -41,7 +41,8 @@ class _ProductReviewScreenState extends State<ProductReviewScreen> {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromRGBO(109, 68, 166, 1),
-                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
               ),

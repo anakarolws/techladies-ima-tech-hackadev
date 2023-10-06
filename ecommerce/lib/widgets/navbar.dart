@@ -5,7 +5,6 @@ import 'package:ecommerce/pages/smarttv_page.dart';
 import 'package:flutter/material.dart';
 import '../pages/eletronicos_page.dart';
 
-
 class NavDrawer extends StatelessWidget {
   const NavDrawer({super.key});
   @override
@@ -16,26 +15,26 @@ class NavDrawer extends StatelessWidget {
         children: <Widget>[
           const UserAccountsDrawerHeader(
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 236, 204, 242),
+              color: Colors.purple,
             ),
             accountName: Text(
               'Seu Nome',
               style: TextStyle(
-                color: Color.fromRGBO(109, 68, 166, 1), // Cor do nome
+                color: Colors.white, // Cor do nome
                 fontSize: 18.0, // Tamanho do texto do nome
               ),
             ),
             accountEmail: Text(
               'seuemail@example.com',
               style: TextStyle(
-                color: Color.fromRGBO(109, 68, 166, 1), // Cor do email
+                color: Colors.white, // Cor do email
               ),
             ),
             currentAccountPicture: CircleAvatar(
               backgroundColor: Colors.purple,
               child: Icon(
                 Icons.account_circle,
-                size: 56.0,
+                size: 80,
                 color: Colors.white,
               ), // Cor de fundo do ícone de usuário
             ),
@@ -114,8 +113,21 @@ class NavDrawer extends StatelessWidget {
   }
 }
 
-
 class SearchBarDelegate extends SearchDelegate<String> {
+  @override
+  ThemeData appBarTheme(BuildContext context) {
+    return ThemeData(
+      appBarTheme: AppBarTheme(
+        backgroundColor:
+            Colors.purple, // Define a cor de fundo da AppBar como transparente
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        hintStyle: TextStyle(
+            color: Colors.white), // Define a cor do texto de dica como branca
+      ),
+    );
+  }
+
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -124,6 +136,7 @@ class SearchBarDelegate extends SearchDelegate<String> {
         onPressed: () {
           query = '';
         },
+        color: Colors.white,
       ),
     ];
   }
@@ -135,6 +148,7 @@ class SearchBarDelegate extends SearchDelegate<String> {
       onPressed: () {
         close(context, '');
       },
+      color: Colors.white, // Define a cor dos ícones como branco
     );
   }
 
@@ -153,8 +167,10 @@ class SearchBarDelegate extends SearchDelegate<String> {
           title: const Text('Eletrônicos'),
           onTap: () {
             query = 'Eletrônicos';
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const EletronicosPage()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const EletronicosPage()));
           },
         ),
         ListTile(
@@ -181,16 +197,20 @@ class SearchBarDelegate extends SearchDelegate<String> {
           title: const Text('Casa Inteligente'),
           onTap: () {
             query = 'Casa Inteligente';
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const CasaInteligentePage()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const CasaInteligentePage()));
           },
         ),
         ListTile(
           title: const Text('Informática'),
           onTap: () {
             query = 'Informática';
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const InformaticaPage()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const InformaticaPage()));
           },
         ),
         // Adicione mais sugestões de pesquisa conforme necessário

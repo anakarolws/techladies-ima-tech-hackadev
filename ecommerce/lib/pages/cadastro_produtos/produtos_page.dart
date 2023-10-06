@@ -53,15 +53,16 @@ class ConteudoPagina extends State {
           icon: Icon(Icons.arrow_back), // Ícone de seta de voltar
           onPressed: () {
             // Ação ao pressionar o botão de voltar
-            Navigator.pushNamed(context, '/');// Pode ser usado para voltar à tela anterior
+            Navigator.pushNamed(
+                context, '/'); // Pode ser usado para voltar à tela anterior
           },
         ),
         title: const Text(
           'Cadastrar Produto',
-          style: TextStyle(color: Colors.purple),
+          style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.grey),
+        backgroundColor: Colors.purple,
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: Center(
         child: Container(

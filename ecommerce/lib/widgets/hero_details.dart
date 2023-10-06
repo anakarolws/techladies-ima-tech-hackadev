@@ -9,7 +9,6 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'custom_appbar.dart';
 
-
 class DetalhesPage extends StatelessWidget {
   final dynamic categoria;
   final int index;
@@ -27,100 +26,123 @@ class DetalhesPage extends StatelessWidget {
       body: SingleChildScrollView(
         child:
             Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          // Container com título do produto
+          Center(
+            child: Container(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                produto.title,
+                style: GoogleFonts.roboto(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 66, 66, 66),
+                ),
+              ),
+            ),
+          ),
+
+          Container(
+            child: Center(
+              child: Row(
+                mainAxisAlignment:
+                    MainAxisAlignment.center, // Centraliza horizontalmente
+                children: [
+                  RatingBar.builder(
+                    initialRating: 4,
+                    minRating: 1,
+                    direction: Axis.horizontal,
+                    itemCount: 5,
+                    itemSize: 15,
+                    itemPadding: EdgeInsets.symmetric(horizontal: 4),
+                    itemBuilder: (context, _) {
+                      return Icon(
+                        Icons.star,
+                        color: Colors.yellow, // Defina a cor desejada aqui
+                      );
+                    },
+                    glowColor: Color.fromRGBO(109, 68, 166, 1),
+                    onRatingUpdate: (index) {},
+                  )
+                ],
+              ),
+            ),
+          ),
+
           // Container com a imagem do produto
-          // ignore: sized_box_for_whitespace
+          SizedBox(height: 20),
           Container(
             width: double.infinity,
             child: Hero(
               tag: "$tagValor-$index",
               child: Image.asset(
                 produto.image!,
-                width: 400,
-                height: 300,
+                // width: 400,
+                height: 200,
               ),
             ),
-          ),
-
-          // Container com título do produto
-          Container(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              produto.title,
-              style: GoogleFonts.roboto(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: const Color.fromRGBO(109, 68, 166, 1)
-              ),
-            ),
-          ),
-
-          // Container com opções de parcelamento
-          Container(
-            padding: const EdgeInsets.all(8.0),
-            child: PriceInstallmentWidget(
-                price: produto.price,
-                fontSize: 18,
-                color: Color.fromARGB(255, 0, 0, 0)),
           ),
 
           // Container com o valor do produto
           Container(
             padding: const EdgeInsets.all(8.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment:
+                  CrossAxisAlignment.center, // Centraliza horizontalmente
               children: [
                 PriceWidget(
                   price: produto.price,
-                  color: const Color.fromRGBO(109, 68, 166, 1),
-                  fontSize: 18,
+                  color: Color.fromARGB(255, 66, 66, 66),
+                  fontSize: 24,
                 ),
+                SizedBox(height: 8), // Espaçamento
                 Text(
                   'À vista com 10% de desconto: R\$ ${(produto.price * 0.9).toStringAsFixed(2)}',
                   style: GoogleFonts.roboto(
-                    fontSize: 12,
+                    fontSize: 15,
                     color: Color.fromRGBO(109, 68, 166, 1),
+                  ),
+                ),
+                SizedBox(height: 5), // Espaçamento
+                Center(
+                  child: Container(
+                    padding: const EdgeInsets.all(8.0),
+                    child: PriceInstallmentWidget(
+                      price: produto.price,
+                      fontSize: 15,
+                      color: Color.fromRGBO(109, 68, 166, 1),
+                    ),
                   ),
                 ),
               ],
             ),
           ),
 
-          // Container com a descrição do produto
+          // Container com o título e a descrição do produto
           Container(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
-              produto.description!,
-              style: GoogleFonts.roboto(
-                color: Color.fromARGB(255, 0, 0, 0),
-                fontSize: 15,
-                fontWeight: FontWeight.normal,
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Descrição:',
+                  style: GoogleFonts.roboto(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 66, 66, 66),
+                  ),
+                ),
+                SizedBox(height: 8), // Espaçamento entre o título e a descrição
+                Text(
+                  produto.description!,
+                  style: GoogleFonts.roboto(
+                    color: Color.fromARGB(255, 0, 0, 0),
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+              ],
             ),
           ),
-          // ignore: avoid_unnecessary_containers
-          Container(
-              child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              RatingBar.builder(
-                initialRating: 4,
-                minRating: 1,
-                direction: Axis.horizontal,
-                itemCount: 5,
-                itemSize: 15,
-                itemPadding: EdgeInsets.symmetric(horizontal: 4),
-                itemBuilder: (context, _) {
-          return Icon(
-            Icons.star,
-            color: Colors.yellow, // Defina a cor desejada aqui
-          );
-        },
-
-                glowColor: Color.fromRGBO(109, 68, 166, 1),
-                onRatingUpdate: (index) {},
-              )
-            ],
-          )),
 
           //Container Produtos relacionados texto
           Container(
@@ -128,7 +150,7 @@ class DetalhesPage extends StatelessWidget {
               margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
               child: Text('Produtos Relacionados',
                   style: GoogleFonts.roboto(
-                    color: Color.fromRGBO(109, 68, 166, 1),
+                    color: Color.fromARGB(255, 66, 66, 66),
                     fontSize: 21,
                     fontWeight: FontWeight.bold,
                   ))),
@@ -168,7 +190,7 @@ class DetalhesPage extends StatelessWidget {
             gap: 8, // espaço entre o botão e o texto
             color: Colors.grey, // cor do ícone sem ação
             activeColor: Colors.white, // cor do texto  e botão ativados
-            iconSize: 15, // tamanho dos botões
+            iconSize: 16, // tamanho dos botões
             tabBackgroundColor: Colors.purple, // cor de fundo do botão ativado
             padding: const EdgeInsets.symmetric(
                 horizontal: 10,
