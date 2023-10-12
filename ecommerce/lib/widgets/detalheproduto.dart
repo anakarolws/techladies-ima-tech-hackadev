@@ -58,7 +58,7 @@ class DetalheProduto extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(109, 68, 166, 1),
+                color: Colors.purple,
               ),
             ),
           ],

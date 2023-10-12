@@ -18,7 +18,7 @@ class ProdutosPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blueGrey,
+          seedColor: Colors.purple,
         ),
       ),
       home: const Pagina(),
@@ -199,10 +199,10 @@ class ConteudoPagina extends State {
                         itemBuilder: (context, index) {
                           return Container(
                             child: Card(
+                              elevation: 4,
                               shape: RoundedRectangleBorder(
                                 side: const BorderSide(
-                                  color: Color.fromRGBO(109, 68, 166, 1),
-                                  width: 1,
+                                  color: Colors.transparent, width: 0,
                                 ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
@@ -215,7 +215,7 @@ class ConteudoPagina extends State {
                                       snapshot.data![index].title,
                                       style: const TextStyle(
                                         fontSize: 15,
-                                        color: Color.fromRGBO(109, 68, 166, 1),
+                                        color: Colors.purple,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -225,8 +225,7 @@ class ConteudoPagina extends State {
                                         vertical: 10, horizontal: 8),
                                     child: PriceWidget(
                                         price: snapshot.data![index].price,
-                                        color: const Color.fromRGBO(
-                                            109, 68, 166, 1)),
+                                        color: Color.fromARGB(255, 66, 66, 66)),
                                   ),
                                   Container(
                                     padding: const EdgeInsets.symmetric(
@@ -235,7 +234,7 @@ class ConteudoPagina extends State {
                                       'Categoria: ${snapshot.data![index].category}',
                                       style: const TextStyle(
                                         fontSize: 15,
-                                        color: Color.fromRGBO(109, 68, 166, 1),
+                                        color: Color.fromARGB(255, 66, 66, 66),
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -258,8 +257,7 @@ class ConteudoPagina extends State {
                                     style: ButtonStyle(
                                       backgroundColor:
                                           MaterialStateProperty.all<Color>(
-                                              const Color.fromRGBO(
-                                                  109, 68, 166, 1)),
+                                             Colors.purple),
                                     ),
                                     child: const Text('Detalhes'),
                                   ),
