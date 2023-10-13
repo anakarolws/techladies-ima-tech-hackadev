@@ -75,61 +75,7 @@ class _HomePageState extends State<HomePage> {
                             topRight: Radius.circular(35)),
                       ),
                     ),
-                    Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          // Texto centralizado
-                          Text(
-                            "Cadastrar produtos",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(255, 66, 66, 66),
-                            ),
-                          ),
-                          // Espaçamento entre o texto e o botão
-                          SizedBox(height: 20),
-                          // Botão centralizado
-
-                          Container(
-                            width: 140, // Defina a largura desejada aqui
-                            height: 40,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.purple,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              onPressed: () =>
-                                  Navigator.pushNamed(context, '/produtosPage'),
-                              child: const Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.assignment,
-                                    color: Colors.white,
-                                    size: 18,
-                                  ),
-                                  SizedBox(width: 8),
-                                  Text(
-                                    "Cadastrar",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 20),
+                    
                     //container com o título de categorias
                     Container(
                         alignment: Alignment.centerLeft,

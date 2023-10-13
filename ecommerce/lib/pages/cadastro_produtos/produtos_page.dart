@@ -1,6 +1,5 @@
 import 'package:ecommerce/controller/produtos_controller.dart';
 import 'package:ecommerce/repository/produtos_repository_impl.dart';
-import 'package:ecommerce/widgets/custom_appbar.dart';
 import 'package:ecommerce/widgets/priceWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -54,7 +53,7 @@ class ConteudoPagina extends State {
           onPressed: () {
             // Ação ao pressionar o botão de voltar
             Navigator.pushNamed(
-                context, '/'); // Pode ser usado para voltar à tela anterior
+                context, '/homePage'); // Pode ser usado para voltar à tela anterior
           },
         ),
         title: const Text(

@@ -3,6 +3,7 @@ import 'package:ecommerce/pages/informatica_page.dart';
 import 'package:ecommerce/pages/smartphone_page.dart';
 import 'package:ecommerce/pages/smarttv_page.dart';
 import 'package:flutter/material.dart';
+import '../pages/cadastro_produtos/produtos_page.dart';
 import '../pages/eletronicos_page.dart';
 
 class NavDrawer extends StatelessWidget {
@@ -106,6 +107,15 @@ class NavDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/configuracoesPage');
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.assignment),
+            title: const Text('Cadastro de Produtos'),
+            onTap: () {
+              // Adicione a lógica para navegar para a página de configurações
+              Navigator.pop(context); // Fecha o drawer
+              Navigator.pushNamed(context, '/loginPageAdm');
+            },
+          )
           // Adicione mais itens de menu conforme necessário
         ],
       ),
@@ -117,11 +127,11 @@ class SearchBarDelegate extends SearchDelegate<String> {
   @override
   ThemeData appBarTheme(BuildContext context) {
     return ThemeData(
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         backgroundColor:
             Colors.purple, // Define a cor de fundo da AppBar como transparente
       ),
-      inputDecorationTheme: InputDecorationTheme(
+      inputDecorationTheme: const InputDecorationTheme(
         hintStyle: TextStyle(
             color: Colors.white), // Define a cor do texto de dica como branca
       ),
@@ -211,6 +221,14 @@ class SearchBarDelegate extends SearchDelegate<String> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => const InformaticaPage()));
+          },
+        ),
+        ListTile(
+          title: const Text('Cadastro'),
+          onTap: () {
+            query = 'Cadastro de Produtos';
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const ProdutosPage()));
           },
         ),
         // Adicione mais sugestões de pesquisa conforme necessário
