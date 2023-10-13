@@ -15,7 +15,12 @@ class DetalheProduto extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Detalhes do Produto'),
+        title: const Text(
+          'Detalhes do Produto',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.purple,
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

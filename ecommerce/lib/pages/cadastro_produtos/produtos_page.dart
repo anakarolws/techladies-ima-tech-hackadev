@@ -1,40 +1,18 @@
-import 'package:ecommerce/controller/produtos_controller.dart';
-import 'package:ecommerce/repository/produtos_repository_impl.dart';
-import 'package:ecommerce/widgets/priceWidget.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/detalheproduto.dart';
+import 'package:ecommerce/controller/produtos_controller.dart';
+import 'package:ecommerce/widgets/priceWidget.dart';
+import 'package:ecommerce/repository/produtos_repository_impl.dart';
 
-class ProdutosPage extends StatelessWidget {
+
+class ProdutosPage extends StatefulWidget {
   const ProdutosPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      routes: {
-        "/detalheproduto": (context) => DetalheProduto(),
-      },
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.purple,
-        ),
-      ),
-      home: const Pagina(),
-    );
-  }
+  _ProdutosPageState createState() => _ProdutosPageState();
 }
 
-class Pagina extends StatefulWidget {
-  const Pagina({super.key});
-
-  @override
-  State<StatefulWidget> createState() {
-    return ConteudoPagina();
-  }
-}
-
-class ConteudoPagina extends State {
+class _ProdutosPageState extends State<ProdutosPage> {
   String produtos = "Produtos";
   String? title;
   String? description;
@@ -43,25 +21,16 @@ class ConteudoPagina extends State {
   var produtosController = ProdutoController(ProdutosRepositoryImpl());
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back), // Ícone de seta de voltar
-          onPressed: () {
-            // Ação ao pressionar o botão de voltar
-            Navigator.pushNamed(
-                context, '/homePage'); // Pode ser usado para voltar à tela anterior
-          },
-        ),
         title: const Text(
-          'Cadastrar Produto',
+          'Avaliações do Produto',
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.purple,
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Center(
         child: Container(
@@ -279,4 +248,5 @@ class ConteudoPagina extends State {
       ),
     );
   }
+
 }

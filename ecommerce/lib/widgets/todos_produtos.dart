@@ -68,7 +68,7 @@ class TodosProdutos extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("R\$${produto.price}",
+                            Text("R\$${produto.price.toStringAsFixed(2)}",
                                 style: const TextStyle(
                                     fontSize: 13,
                                     fontWeight: FontWeight.bold,

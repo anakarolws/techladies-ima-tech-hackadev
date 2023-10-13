@@ -10,6 +10,7 @@ import 'package:ecommerce/pages/minha_conta_page.dart';
 import 'package:ecommerce/pages/smartphone_page.dart';
 import 'package:ecommerce/pages/smarttv_page.dart';
 import 'package:ecommerce/pages/splash_page.dart';
+import 'package:ecommerce/widgets/detalheproduto.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/cart_page.dart';
@@ -33,7 +34,6 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         "/": (context) => const HomePage(),
-        "/homePage": (context) => const HomePage(),
         "cartPage": (context) => const CartPage(),
         "/minhaContaPage": (context) => LoginPage(),
         "/eletronicosPage": (context) => const EletronicosPage(),
@@ -48,6 +48,7 @@ class MyApp extends StatelessWidget {
         "/informaticaPage": (context) => const InformaticaPage(),
         "/produtosPage": (context) => const ProdutosPage(),
         "/loginPageAdm": (context) => const LoginPageAdm(),
+        "/detalheproduto": (context) => DetalheProduto(),
 
       },
     );
