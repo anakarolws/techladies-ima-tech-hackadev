@@ -23,11 +23,11 @@ class CartPage extends StatelessWidget {
         },
         child: Container(
           padding: const EdgeInsets.symmetric(
-              horizontal: 50, vertical: 20), // Define o padding
+              horizontal: 40, vertical: 10), // Define o padding
           child: const Text(
             'Finalizar Pedido',
             style: TextStyle(
-              fontSize: 20, // Tamanho da fonte desejado
+              fontSize: 18, // Tamanho da fonte desejado
             ),
           ),
         ),
