@@ -4,7 +4,6 @@ import 'package:ecommerce/controller/produtos_controller.dart';
 import 'package:ecommerce/widgets/priceWidget.dart';
 import 'package:ecommerce/repository/produtos_repository_impl.dart';
 
-
 class ProdutosPage extends StatefulWidget {
   const ProdutosPage({super.key});
 
@@ -26,7 +25,7 @@ class _ProdutosPageState extends State<ProdutosPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Avaliações do Produto',
+          'Cadastrar Produto',
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.purple,
@@ -130,7 +129,7 @@ class _ProdutosPageState extends State<ProdutosPage> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.purple,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(8),
                             ),
                             minimumSize: Size(120, 50),
                           ),
@@ -170,7 +169,8 @@ class _ProdutosPageState extends State<ProdutosPage> {
                               elevation: 4,
                               shape: RoundedRectangleBorder(
                                 side: const BorderSide(
-                                  color: Colors.transparent, width: 0,
+                                  color: Colors.transparent,
+                                  width: 0,
                                 ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
@@ -225,7 +225,7 @@ class _ProdutosPageState extends State<ProdutosPage> {
                                     style: ButtonStyle(
                                       backgroundColor:
                                           MaterialStateProperty.all<Color>(
-                                             Colors.purple),
+                                              Colors.purple),
                                     ),
                                     child: const Text('Detalhes'),
                                   ),
@@ -248,5 +248,4 @@ class _ProdutosPageState extends State<ProdutosPage> {
       ),
     );
   }
-
 }

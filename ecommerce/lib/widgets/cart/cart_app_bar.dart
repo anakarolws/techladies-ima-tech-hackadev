@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CartAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String title = 'Carrinho';
+  final String title = 'Meu Carrinho';
   const CartAppBar({super.key});
 
   @override
@@ -21,16 +21,6 @@ class CartAppBar extends StatelessWidget implements PreferredSizeWidget {
         title,
         style: GoogleFonts.roboto(fontSize: 20, color: Colors.white),
       ),
-      actions: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.more_vert,
-            size: 28,
-            color: Color.fromRGBO(109, 68, 166, 1),
-          ),
-        ),
-      ],
     );
   }
 
