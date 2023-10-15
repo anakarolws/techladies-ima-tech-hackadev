@@ -138,20 +138,4 @@
     <a href="https://github.com/Re-na6ta" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
 </p>
 
----
 
-<!-- Samuelly Laurentino -->
-
-<p align="center">
-<!-- nome -->
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=1500&pause=1000&color=E4D5F2&center=true&vCenter=true&multiline=true&width=450&lines=Samuelly+Laurentino+" />
- <br>
- <!-- foto -->
-    <img src="ecommerce/assets/img/membros/samuely_laurentino.webp" alt="Samuelly Laurentino" width="200px" style="border-radius: 50%; margin-bottom: 15px;"/><br>
-    <!-- about -->
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=1500&pause=1200&color=7B51A6&center=true&vCenter=true&multiline=true&width=1200&height=90&lines=Administradora+em+transi%C3%A7%C3%A3o+de+carreira%2C+de+Campina+Grande%C2%A0na%C2%A0Para%C3%ADba" />
-    
-<br>
-<!-- github -->
-    <a href="https://github.com/samuelylaurentino" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
-</p>
