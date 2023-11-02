@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  db:
+    image: gvenzl/oracle-xe:slim
+    ports:
+      - 1521:1521
+    networks:
+      - techplace
+    environment:
+      - ORACLE_PASSWORD=123456
+      - APP_USER=TECHPLACE
+      - APP_USER_PASSWORD=123456
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+
+  app:
+    build: .
+    networks:
+      - techplace
+    ports:
+      - 8000:80
+    volumes:
+      - .:/app
+    environment:
+      - WEB_DOCUMENT_ROOT=/app/public
+
+volumes:
+  oracle-data:
+
+networks:
+  techplace:

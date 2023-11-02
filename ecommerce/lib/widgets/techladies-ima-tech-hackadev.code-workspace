@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../Todas-Tech/Aulas Síncronas/PHP"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
