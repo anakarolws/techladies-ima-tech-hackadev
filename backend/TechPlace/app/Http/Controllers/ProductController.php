@@ -69,7 +69,7 @@ class ProductController extends Controller
 
     public function update(int $id, Request $request)
     {
-        // Conceito do PUT em Rest, é subistituir
+        // Conceito do PUT em Rest, é substituir
         $product = Product::findOrFail($id);
 
         // Estamos preenchendo o que veio da request

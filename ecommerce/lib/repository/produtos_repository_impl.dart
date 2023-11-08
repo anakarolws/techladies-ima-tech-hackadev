@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class ProdutosRepositoryImpl implements ProdutosRepository {
-  String dataUrl = "http://localhost:3000/produtos/";
+  String dataUrl = "http://localhost:8000/produtos/";
 
   @override
   Future<List<Produtos>> getProdutos() async {
