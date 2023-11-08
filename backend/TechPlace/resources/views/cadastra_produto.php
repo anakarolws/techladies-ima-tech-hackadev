@@ -43,16 +43,21 @@
             border-radius: 5px;
             cursor: pointer;
         }
+         /* Estilo para a imagem */
+         .center-image {
+            text-align: center;
+        }
         h1 {
             text-align: center;
             color: purple;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-size: 50px;
         }
     </style>
 </head>
 <body>
     <h1>Tech Place</h1>
+    </div>
     <form action="/api/products" method="post" enctype="multipart/form-data">
         <div>
             <label>Nome:</label>
@@ -71,12 +76,8 @@
             <input type="number" step=".01" name="price">
         </div>
         <div>
-            <label>Perfil:</label>
-            <input type="text" name="profile">
-        </div>
-        <div>
             <label>Imagem:</label>
-            <input type="file" name="image">
+            <input type="file" name="profile">
         </div>
         <button type="submit">Cadastrar</button>
     </form>

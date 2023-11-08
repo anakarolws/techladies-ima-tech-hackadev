@@ -22,7 +22,6 @@ class Product extends Model
         'price',
         'category',
         'profile',
-        'image',
      ];
 
      public function profile(): Attribute

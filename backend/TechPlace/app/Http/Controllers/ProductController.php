@@ -89,11 +89,8 @@ class ProductController extends Controller
         $product->delete();
         return response('Produto excluído', 204);
     }
-
-    public function uploadProfile(int $id, Request $request)
+    public function uploadProfile(Request $request)
     {
-        $product = Product::findOrFail($id);
-
         // Para encontrar a imagem, rodar:
         // php artisan storage:link
 
@@ -107,14 +104,9 @@ class ProductController extends Controller
             $nomeArquivo = uniqid();
             $path = $request->file('profile')->storePubliclyAs('public/products', "$nomeArquivo." . $extensao);
 
-            $image_path = Storage::url($path);
-
-            $product->image = $image_path;
-            $product->save();
-
             // respondemos com um link
             return response()->json([
-                'url' => $image_path
+                'url' => Storage::url($path)
             ]);
         }
 

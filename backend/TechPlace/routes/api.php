@@ -25,4 +25,4 @@ Route::put('/products/{id}',[ProductController::class,'update']);
 Route::post('/products',[ProductController::class,'create']);
 Route::delete('/products/{id}',[ProductController::class,'delete']);
 
-Route::post('/products/{id}/profile',[ProductController::class,'uploadProfile']);
+Route::post('/products/profile',[ProductController::class,'uploadProfile']);
