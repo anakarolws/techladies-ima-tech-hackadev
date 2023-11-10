@@ -12,6 +12,7 @@ class DetalheProduto extends StatelessWidget {
     final String description = arguments['description'];
     final double price = arguments['price'];
     final String category = arguments['category'];
+    
 
     return Scaffold(
       appBar: AppBar(
@@ -59,13 +60,15 @@ class DetalheProduto extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              'Preço: \$${price.toStringAsFixed(2)}',
+              'Preço: R\$${price.toStringAsFixed(2)}',
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: Colors.purple,
               ),
             ),
+            const SizedBox(height: 8),
+            
           ],
         ),
       ),

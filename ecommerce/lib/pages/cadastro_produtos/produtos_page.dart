@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce/controller/produtos_controller.dart';
 import 'package:ecommerce/widgets/priceWidget.dart';
 import 'package:ecommerce/repository/produtos_repository_impl.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ProdutosPage extends StatefulWidget {
   const ProdutosPage({super.key});
@@ -17,6 +18,7 @@ class _ProdutosPageState extends State<ProdutosPage> {
   String? description;
   double? price;
   String? category;
+  String? profile;
   var produtosController = ProdutoController(ProdutosRepositoryImpl());
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -121,6 +123,29 @@ class _ProdutosPageState extends State<ProdutosPage> {
                           return null;
                         },
                       ),
+                      SizedBox(height: 20),
+                      TextButton(
+                        onPressed: () async {
+                          // Lógica para selecionar a imagem
+                          final pickedFile = await ImagePicker()
+                              .pickImage(source: ImageSource.gallery);
+                          if (pickedFile != null) {
+                            setState(() {
+                              profile = pickedFile.path;
+                            });
+                          }
+                        },
+                        style: TextButton.styleFrom(
+                          foregroundColor: Colors.purple, // Cor do texto
+                        ),
+                        child: Text('Selecionar Imagem'),
+                      ),
+                      TextFormField(
+                        decoration: const InputDecoration(labelText: "Imagem"),
+                        readOnly: true,
+                        controller: TextEditingController(text: profile),
+                      ),
+                      SizedBox(height: 10),
 
                       //inclusão e validação de cadastro
                       Padding(
@@ -136,7 +161,12 @@ class _ProdutosPageState extends State<ProdutosPage> {
                           onPressed: () async {
                             if (_formKey.currentState!.validate()) {
                               await produtosController.fetchProdutosPost(
-                                  title!, description!, price!, category!);
+                                title!,
+                                description!,
+                                price!,
+                                category!,
+                                profile,
+                              );
                               setState(() {
                                 produtosController.fetchProdutosList();
                               });
@@ -182,7 +212,7 @@ class _ProdutosPageState extends State<ProdutosPage> {
                                     child: Text(
                                       snapshot.data![index].title,
                                       style: const TextStyle(
-                                        fontSize: 15,
+                                        fontSize: 12,
                                         color: Colors.purple,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -190,18 +220,30 @@ class _ProdutosPageState extends State<ProdutosPage> {
                                   ),
                                   Container(
                                     padding: const EdgeInsets.symmetric(
+                                        vertical: 0, horizontal: 0),
+                                    child: Image.network(
+                                      snapshot.data![index].profile,
+                                      width: 50,
+                                      height: 50,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
                                         vertical: 10, horizontal: 8),
                                     child: PriceWidget(
-                                        price: snapshot.data![index].price,
-                                        color: Color.fromARGB(255, 66, 66, 66)),
+                                          price: snapshot.data![index].price,
+                                          color:
+                                              Color.fromARGB(255, 66, 66, 66),
+                                    ),
                                   ),
                                   Container(
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10, horizontal: 8),
                                     child: Text(
-                                      'Categoria: ${snapshot.data![index].category}',
+                                      '${snapshot.data![index].category}',
                                       style: const TextStyle(
-                                        fontSize: 15,
+                                        fontSize: 12,
                                         color: Color.fromARGB(255, 66, 66, 66),
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -219,6 +261,7 @@ class _ProdutosPageState extends State<ProdutosPage> {
                                           'price': snapshot.data![index].price,
                                           'category':
                                               snapshot.data![index].category,
+                                          'image': snapshot.data![index].profile
                                         },
                                       );
                                     },
@@ -226,6 +269,11 @@ class _ProdutosPageState extends State<ProdutosPage> {
                                       backgroundColor:
                                           MaterialStateProperty.all<Color>(
                                               Colors.purple),
+                                      minimumSize:
+                                          MaterialStateProperty.all<Size>(Size( 70, 30)),
+                                          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.all(8)),
+                                          textStyle: MaterialStateProperty.all<TextStyle>(TextStyle(fontSize:10)),
+                                          
                                     ),
                                     child: const Text('Detalhes'),
                                   ),

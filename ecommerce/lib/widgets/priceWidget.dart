@@ -10,7 +10,7 @@ class PriceWidget extends StatelessWidget {
       {super.key,
       required this.price,
       required this.color,
-      this.fontSize = 14});
+      this.fontSize = 12});
 
   @override
   Widget build(BuildContext context) {

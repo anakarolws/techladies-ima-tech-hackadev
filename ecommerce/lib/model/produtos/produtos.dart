@@ -4,13 +4,15 @@ class Produtos {
   final String description;
   final double price;
   final String category;
+  final String profile;
 
   const Produtos(
       {required this.id,
       required this.title,
       required this.description,
       required this.price,
-      required this.category});
+      required this.category,
+      required this.profile});
 
   factory Produtos.fromJson(Map<String, dynamic> json) {
     return Produtos(
@@ -18,7 +20,9 @@ class Produtos {
         title: json['title'],
         description: json['description'],
         price: json['price'],
-        category: json['category']);
+        category: json['category'],
+        profile: json['profile']);
+
   }
 
   Map<String, dynamic> toJson() {
@@ -28,6 +32,7 @@ class Produtos {
     dados['description'] = description;
     dados['price'] = price;
     dados['category'] = category;
+    dados['profile'] = profile;
 
     return dados;
   }

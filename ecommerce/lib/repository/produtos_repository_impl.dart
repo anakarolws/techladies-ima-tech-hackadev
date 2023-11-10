@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class ProdutosRepositoryImpl implements ProdutosRepository {
-  String dataUrl = "http://localhost:8000/api/produtos/";
+  String dataUrl = "http://localhost:8000/api/products/";
 
   @override
   Future<List<Produtos>> getProdutos() async {
@@ -17,6 +17,8 @@ class ProdutosRepositoryImpl implements ProdutosRepository {
     var body = json.decode(response.body);
 
     for (var produto in body) {
+      produto ['price'] = double.parse(produto['price'].toString());
+      //produto ['profile'] = 'https://picsum.photos/250?image=9';
       produtosList.add(Produtos.fromJson(produto));
     }
 
@@ -35,7 +37,7 @@ class ProdutosRepositoryImpl implements ProdutosRepository {
     await http.post(
       Uri.parse(dataUrl),
       headers: <String, String>{'Content-type':'application/json'},
-      body: jsonEncode(<String, dynamic>{'title':title, 'description':description, 'price': price, 'category':category})
+      body: jsonEncode(<String, dynamic>{'title':title, 'description':description, 'price': price, 'category':category, 'profile': ''})
     );
     
   }

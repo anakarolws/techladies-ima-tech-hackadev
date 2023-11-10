@@ -46,7 +46,7 @@ class ProductController extends Controller
         $order = $request->input('order');
 
         if ($busca) {
-            $products = Product::where('name', 'like', "%$busca%")
+            $products = Product::where('title', 'like', "%$busca%")
                                ->orWhere('description', 'like', "%$busca%")
                                ->orWhere('category', 'like', "%$busca%")                               
                                ;
@@ -89,8 +89,9 @@ class ProductController extends Controller
         $product->delete();
         return response('Produto excluído', 204);
     }
-    public function uploadProfile(Request $request)
+    public function uploadProfile(int $id, Request $request)
     {
+        $product = Product::findOrFail($id);
         // Para encontrar a imagem, rodar:
         // php artisan storage:link
 
@@ -102,8 +103,10 @@ class ProductController extends Controller
             // storePubliclyAs armazena o arquivo temporario na pasta informada
             // na área pública: pasta "public" do projeto
             $nomeArquivo = uniqid();
-            $path = $request->file('profile')->storePubliclyAs('public/products', "$nomeArquivo." . $extensao);
-
+            $path = $request->file('profile')->storePubliclyAs('public/products/' .  strtolower(preg_replace('/[^\w-]/', '', iconv('UTF-8','ASCII//TRANSLIT', $product->category))), "$nomeArquivo." . $extensao);
+            $product->profile = Storage::url($path);
+            $product->save();
+            
             // respondemos com um link
             return response()->json([
                 'url' => Storage::url($path)

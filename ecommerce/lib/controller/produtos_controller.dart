@@ -11,7 +11,7 @@ class ProdutoController {
   }
 
   Future<void> fetchProdutosPost(
-      String title, String description, double price, String category) async {
+      String title, String description, double price, String category, String? profile) async {
     return _repository.postProdutos(title, description, price, category);
   }
 }
