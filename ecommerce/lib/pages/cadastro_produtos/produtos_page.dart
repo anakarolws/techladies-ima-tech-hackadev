@@ -221,8 +221,8 @@ class _ProdutosPageState extends State<ProdutosPage> {
                                   Container(
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 0, horizontal: 0),
-                                    child: Image.network(
-                                      snapshot.data![index].profile,
+                                    child: Image.network( 
+                                      snapshot.data![index].link,
                                       width: 50,
                                       height: 50,
                                       fit: BoxFit.cover,

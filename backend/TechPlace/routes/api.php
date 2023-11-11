@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,15 @@ Route::post('/products',[ProductController::class,'create']);
 Route::delete('/products/{id}',[ProductController::class,'delete']);
 
 Route::post('/products/{id}/profile',[ProductController::class,'uploadProfile']);
+
+Route::get('/storage/{id}', function (int $id) {
+    $product = Product::findOrFail($id);
+
+    $storeUrl = "public/$product->profile";
+
+    $imagem = Storage::get($storeUrl);
+    $mime = Storage::mimeType($storeUrl);
+
+    return response($imagem, 200)
+            ->header('Content-Type', $mime);
+});

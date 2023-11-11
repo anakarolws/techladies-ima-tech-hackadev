@@ -24,10 +24,19 @@ class Product extends Model
         'profile',
      ];
 
-     public function profile(): Attribute
-     {
-         return Attribute::make(
-             get: fn(string $value) => url($value)
-         );
-     }
+    //  public function profile(): Attribute
+    //  {
+    //      return Attribute::make(
+    //          get: fn(string $value) => url($value)
+    //      );
+    //  }
+
+    protected $appends = ['link'];
+
+    protected function link(): Attribute
+    {
+        return new Attribute(
+            get: fn () => url('api/storage/'.$this->id),
+        );
+    }
  }
