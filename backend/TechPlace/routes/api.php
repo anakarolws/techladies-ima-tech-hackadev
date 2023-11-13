@@ -4,7 +4,7 @@ use App\Http\Controllers\Api\ProductAPIController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
-use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,14 +30,10 @@ Route::delete('/products/{id}',[ProductAPIController::class,'delete']);
 
 Route::post('/products/{id}/profile',[ProductAPIController::class,'uploadProfile']);
 
-Route::get('/storage/{id}', function (int $id) {
+Route::middleware(['cors'])->get('/products/{id}/profile', function (int $id) {
     $product = Product::findOrFail($id);
+    $path = substr($product->profile, strlen('/storage/'));
+    $storage = Storage::disk('public')->get($path);
 
-    $storeUrl = "public/$product->profile";
-
-    $imagem = Storage::get($storeUrl);
-    $mime = Storage::mimeType($storeUrl);
-
-    return response($imagem, 200)
-            ->header('Content-Type', $mime);
+    return Image::make($storage)->response();
 });

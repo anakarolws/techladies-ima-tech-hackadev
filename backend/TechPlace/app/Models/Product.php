@@ -36,7 +36,7 @@ class Product extends Model
     protected function link(): Attribute
     {
         return new Attribute(
-            get: fn () => url($this->profile),
+            get: fn () => url('/api/products/'.$this->id.'/profile'),
         );
     }
  }
