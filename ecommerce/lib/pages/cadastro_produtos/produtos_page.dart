@@ -19,6 +19,7 @@ class _ProdutosPageState extends State<ProdutosPage> {
   double? price;
   String? category;
   String? profile;
+  XFile? arquivoImagem;
   var produtosController = ProdutoController(ProdutosRepositoryImpl());
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -132,6 +133,7 @@ class _ProdutosPageState extends State<ProdutosPage> {
                           if (pickedFile != null) {
                             setState(() {
                               profile = pickedFile.path;
+                              arquivoImagem = pickedFile;
                             });
                           }
                         },
@@ -165,7 +167,8 @@ class _ProdutosPageState extends State<ProdutosPage> {
                                 description!,
                                 price!,
                                 category!,
-                                profile,
+                                profile!,
+                                arquivoImagem!,
                               );
                               setState(() {
                                 produtosController.fetchProdutosList();
