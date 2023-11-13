@@ -1,4 +1,6 @@
 import 'package:ecommerce/model/produtos/produtos.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:async/async.dart';
 
 import 'produtos_repository.dart';
 
@@ -33,12 +35,24 @@ class ProdutosRepositoryImpl implements ProdutosRepository {
 
   @override
   Future<void> postProdutos(
-      String title, String description, double price, String category) async {
-    await http.post(
-      Uri.parse(dataUrl),
-      headers: <String, String>{'Content-type':'application/json'},
-      body: jsonEncode(<String, dynamic>{'title':title, 'description':description, 'price': price, 'category':category, 'profile': ''})
-    );
+      String title, String description, double price, String category, String profile, XFile arquivoImagem) async {
+
+
+    var request = http.MultipartRequest("POST", Uri.parse(dataUrl));
+    request.fields['title'] = title;
+    request.fields['description'] = description;
+    request.fields['price'] = price.toString();
+    request.fields['profile'] = profile;
+    request.fields['category'] = category;
+
+    var stream = http.ByteStream(DelegatingStream.typed(arquivoImagem.openRead()));
+    var length = await arquivoImagem.length();
+    var multipartFileSign = http.MultipartFile('file', stream, length, filename: arquivoImagem.name);
+
+    request.files.add(multipartFileSign);
+
+    var response = await request.send();
+    if (response.statusCode == 200) print('Uploaded!');
     
   }
 

@@ -1,5 +1,6 @@
 import 'package:ecommerce/model/produtos/produtos.dart';
 import 'package:ecommerce/repository/produtos_repository.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ProdutoController {
   final ProdutosRepository _repository;
@@ -11,7 +12,7 @@ class ProdutoController {
   }
 
   Future<void> fetchProdutosPost(
-      String title, String description, double price, String category, String? profile) async {
-    return _repository.postProdutos(title, description, price, category);
+      String title, String description, double price, String category, String profile, XFile arquivoImagem) async {
+    return _repository.postProdutos(title, description, price, category, profile, arquivoImagem);
   }
 }

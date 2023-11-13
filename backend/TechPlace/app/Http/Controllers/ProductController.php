@@ -22,11 +22,15 @@ class ProductController extends Controller
     {
         $product = new Product($request->all());
 
-        var_dump($product->name);
-        
-
-        // response json 
-        // response()->json([], 201);
+        if ($request->hasFile('file')) {
+            $extensao = $request->file('file')->extension();
+            
+            // storePubliclyAs armazena o arquivo temporario na pasta informada
+            // na área pública: pasta "public" do projeto
+            $nomeArquivo = uniqid();
+            $path = $request->file('file')->storePubliclyAs('public/products/' .  strtolower(preg_replace('/[^\w-]/', '', iconv('UTF-8','ASCII//TRANSLIT', $product->category))), "$nomeArquivo." . $extensao);
+            $product->profile = str_replace('/storage/', '', Storage::url($path));
+        }
 
         if ($product->save() === true) {
             return response()->json($product, 201);
@@ -104,7 +108,7 @@ class ProductController extends Controller
             // na área pública: pasta "public" do projeto
             $nomeArquivo = uniqid();
             $path = $request->file('profile')->storePubliclyAs('public/products/' .  strtolower(preg_replace('/[^\w-]/', '', iconv('UTF-8','ASCII//TRANSLIT', $product->category))), "$nomeArquivo." . $extensao);
-            $product->profile = Storage::url($path);
+            $product->profile = str_replace('/storage/', '', Storage::url($path));
             $product->save();
             
             // respondemos com um link
