@@ -25,7 +25,7 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
         <div class="col-sm">
           <div class="card">
             <div class="card-header">
-              <h5 class="card-title">{{ $item->title }}</h5>
+              <h6 class="card-title">{{ $item->title }}</h5>
             </div>
             <img src="{{ asset($item->profile) }}" class="card-img-top" alt="product image">
             <div class="card-body">
