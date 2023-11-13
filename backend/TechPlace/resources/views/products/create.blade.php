@@ -58,10 +58,11 @@
 <body>
     <h1>Tech Place</h1>
     </div>
-    <form action="/api/products" method="post" enctype="multipart/form-data">
+    <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
+        @csrf
         <div>
             <label>Nome:</label>
-            <input type="text" name="name">
+            <input type="text" name="title">
         </div>
         <div>
             <label>Descrição:</label>
