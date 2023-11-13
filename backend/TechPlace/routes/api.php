@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\Produ;
+use App\Http\Controllers\Api\ProductAPIController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
@@ -21,13 +21,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/products',[ProductController::class,'getAll']);
-Route::get('/products/{id}',[ProductController::class,'getProduct']);
-Route::put('/products/{id}',[ProductController::class,'update']);
-Route::post('/products',[ProductController::class,'create']);
-Route::delete('/products/{id}',[ProductController::class,'delete']);
+Route::get('/products',[ProductAPIController::class,'getAll']);
+Route::get('/products/{id}',[ProductAPIController::class,'getProduct']);
+Route::put('/products/{id}',[ProductAPIController::class,'update']);
+Route::post('/products',[ProductAPIController::class,'create']);
+Route::delete('/products/{id}',[ProductAPIController::class,'delete']);
 
-Route::post('/products/{id}/profile',[ProductController::class,'uploadProfile']);
+Route::post('/products/{id}/profile',[ProductAPIController::class,'uploadProfile']);
 
 Route::get('/storage/{id}', function (int $id) {
     $product = Product::findOrFail($id);
