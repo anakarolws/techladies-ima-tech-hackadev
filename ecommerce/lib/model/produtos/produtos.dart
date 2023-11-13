@@ -39,4 +39,10 @@ class Produtos {
 
     return dados;
   }
+
+  @override
+  String toString() {
+    
+      return category.toString();
+  }
 }

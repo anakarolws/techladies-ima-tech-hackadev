@@ -32,6 +32,7 @@ class ProductController extends Controller
         
         // Handle File Upload
         if($request->hasFile('profile')){
+
             // .png | .jpg | .jpeg 
             $extensao = $request->file('profile')->extension();
             

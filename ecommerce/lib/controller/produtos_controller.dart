@@ -11,8 +11,26 @@ class ProdutoController {
     return _repository.getProdutos();
   }
 
-  Future<void> fetchProdutosPost(
-      String title, String description, double price, String category, String profile, XFile arquivoImagem) async {
-    return _repository.postProdutos(title, description, price, category, profile, arquivoImagem);
+  Future<void> fetchProdutosPost(String title, String description, double price,
+      String category, String profile, XFile arquivoImagem) async {
+    return _repository.postProdutos(
+        title, description, price, category, profile, arquivoImagem);
+  }
+
+  Future<List<Produtos>> fetchProdutosCategoria(String categoria) {
+    return _repository.selecionarProdutoCategoria(categoria);
+  }
+
+  
+  Future<Produtos> deletedProduto(int id) async {
+    print('Controller chamando o repository');
+    return _repository.deletedProduto(id);
+  }
+  Future<List<dynamic>> buscarProdutosPorTermo(String searchTermo) async {
+    print('Iniciando a busca dos produtos por termo $searchTermo');
+    var produtos = await _repository.buscarProdutosPorTermo(searchTermo);
+    print(produtos);
+    return produtos;
+
   }
 }

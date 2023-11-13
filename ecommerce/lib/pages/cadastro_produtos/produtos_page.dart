@@ -258,6 +258,7 @@ class _ProdutosPageState extends State<ProdutosPage> {
                                         context,
                                         '/detalheproduto',
                                         arguments: {
+                                          'id': snapshot.data![index].id,
                                           'title': snapshot.data![index].title,
                                           'description':
                                               snapshot.data![index].description,

@@ -13,7 +13,7 @@ class HeroImage extends StatelessWidget {
       tag: tag,
       child: Container(
         margin: const EdgeInsets.all(10),
-        child: Image.asset(
+        child: Image.network(
           image,
           height: 120,
           width: 120,

@@ -60,14 +60,9 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: const Color.fromARGB(255, 247, 246, 246),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-        child: CustomScrollView(
-          slivers: [
-            SliverList(
-              delegate: SliverChildListDelegate([
-                //parte de configuração do layout principal
-                Column(
-                  children: [
-                    Container(
+        child: Column(
+          children: [
+            Container(
                       padding: const EdgeInsets.only(top: 15),
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -75,8 +70,7 @@ class _HomePageState extends State<HomePage> {
                             topRight: Radius.circular(35)),
                       ),
                     ),
-                    
-                    //container com o título de categorias
+                                //container com o título de categorias
                     Container(
                         alignment: Alignment.centerLeft,
                         margin: const EdgeInsets.symmetric(
@@ -84,19 +78,14 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           "Categorias",
                           style: GoogleFonts.roboto(
-                            color: Color.fromARGB(255, 66, 66, 66),
+                            color: const Color.fromARGB(255, 66, 66, 66),
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         )),
-
-                    //classe com layout para categoria de produtos
-                    const CategoriesWidget(),
-                  ],
-                ),
-                SizedBox(height: 15),
-                //itens - titulo acima dos produtos
-                Container(
+            const CategoriesWidget(),
+            const SizedBox(height: 15),
+                  Container(
                     alignment: Alignment.centerLeft,
                     margin:
                         const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
@@ -108,11 +97,8 @@ class _HomePageState extends State<HomePage> {
                         fontWeight: FontWeight.bold,
                       ),
                     )),
-              ]),
-            ),
 
-            // Inclusão de todos os produtos
-            const TodosProdutos(),
+            Expanded(child: const TodosProdutos()),
           ],
         ),
       ),

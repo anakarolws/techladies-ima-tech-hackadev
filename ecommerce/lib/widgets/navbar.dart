@@ -1,7 +1,9 @@
+import 'package:ecommerce/controller/produtos_controller.dart';
 import 'package:ecommerce/pages/casa_inteligente_page.dart';
 import 'package:ecommerce/pages/informatica_page.dart';
 import 'package:ecommerce/pages/smartphone_page.dart';
 import 'package:ecommerce/pages/smarttv_page.dart';
+import 'package:ecommerce/repository/produtos_repository_impl.dart';
 import 'package:flutter/material.dart';
 import '../pages/cadastro_produtos/produtos_page.dart';
 import '../pages/eletronicos_page.dart';
@@ -140,7 +142,16 @@ class SearchBarDelegate extends SearchDelegate<String> {
 
   @override
   List<Widget> buildActions(BuildContext context) {
+    final produtosController = ProdutoController(ProdutosRepositoryImpl());
     return [
+      IconButton(
+        icon: const Icon(Icons.search),
+        onPressed: () {
+          var produtos = produtosController.buscarProdutosPorTermo(query);
+
+        },
+        color: Colors.white,
+      ),
       IconButton(
         icon: const Icon(Icons.clear),
         onPressed: () {
@@ -148,6 +159,7 @@ class SearchBarDelegate extends SearchDelegate<String> {
         },
         color: Colors.white,
       ),
+      
     ];
   }
 
@@ -164,8 +176,10 @@ class SearchBarDelegate extends SearchDelegate<String> {
 
   @override
   Widget buildResults(BuildContext context) {
+    final produtosController = ProdutoController(ProdutosRepositoryImpl());
+    var produtos = produtosController.buscarProdutosPorTermo(query);
     return Center(
-      child: Text('Resultados para: $query'),
+      child: Text('Resultados para: $produtos'),
     );
   }
 
@@ -223,14 +237,14 @@ class SearchBarDelegate extends SearchDelegate<String> {
                     builder: (context) => const InformaticaPage()));
           },
         ),
-        ListTile(
-          title: const Text('Cadastro'),
-          onTap: () {
-            query = 'Cadastro de Produtos';
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const ProdutosPage()));
-          },
-        ),
+        // ListTile(
+        //   title: const Text('Cadastro'),
+        //   onTap: () {
+        //     query = 'Cadastro de Produtos';
+        //     Navigator.push(context,
+        //         MaterialPageRoute(builder: (context) => const ProdutosPage()));
+        //   },
+        // ),
         // Adicione mais sugestões de pesquisa conforme necessário
       ],
     );
