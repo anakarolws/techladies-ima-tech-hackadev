@@ -22,14 +22,15 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
   <div class="container mt-5">
     <div class="row">
       @foreach ($items as $item)
-        <div class="col-sm">
-          <div class="card">
+      <div class="col-sm-4 mb-4">
+        <div class="card">
             <div class="card-header">
-              <h6 class="card-title">{{ $item->title }}</h5>
+              <h5 class="card-title">{{ $item->title }}</h5>
             </div>
             <img src="{{ asset($item->profile) }}" class="card-img-top" alt="product image">
             <div class="card-body">
               <p class="card-text">{{ $item->description }}</p>
+              <p class="card-text"><strong>Preço: </strong>R$ {{ number_format($item->price, 2, ',', '.') }}</p>
             </div>
             <div class="card-footer">
               <div class="row">
