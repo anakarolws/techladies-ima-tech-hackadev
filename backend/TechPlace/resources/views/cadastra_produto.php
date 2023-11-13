@@ -61,7 +61,7 @@
     <form action="/api/products" method="post" enctype="multipart/form-data">
         <div>
             <label>Nome:</label>
-            <input type="text" name="name">
+            <input type="text" name="title">
         </div>
         <div>
             <label>Descrição:</label>

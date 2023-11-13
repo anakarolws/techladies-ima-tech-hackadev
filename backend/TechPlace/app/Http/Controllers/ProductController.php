@@ -22,7 +22,7 @@ class ProductController extends Controller
     {
         $product = new Product($request->all());
 
-        var_dump($product->name);
+        var_dump($product);
         
 
         // response json 
