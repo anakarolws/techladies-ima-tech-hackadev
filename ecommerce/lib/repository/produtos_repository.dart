@@ -9,4 +9,6 @@ abstract class ProdutosRepository {
   Future<Produtos> deletedProduto(int id);
   Future<List<Produtos>> selecionarProdutoCategoria(String categoria);
   Future<List<dynamic>> buscarProdutosPorTermo(String search);
+
+  Future<Produtos> buscarProduto(int? produtoId);
 }

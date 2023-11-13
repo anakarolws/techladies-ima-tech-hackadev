@@ -2,6 +2,8 @@ import 'package:ecommerce/controller/produtos_controller.dart';
 import 'package:ecommerce/repository/produtos_repository_impl.dart';
 import 'package:flutter/material.dart';
 
+import '../pages/alterar_produto_page.dart';
+
 class DetalheProduto extends StatelessWidget {
   final produtosController = ProdutoController(ProdutosRepositoryImpl());
 
@@ -23,7 +25,7 @@ class DetalheProduto extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Detalhes do Produto DE CADSATRO',
+          'Detalhes do Produto',
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.purple,
@@ -78,9 +80,20 @@ class DetalheProduto extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  style: style,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.purple,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    minimumSize: Size(120, 50),
+                  ),
                   onPressed: () {
                     print('alterar');
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (context) => AlterarProdutoPage(produtoId: id),
+                      ),
+                    );
                   },
                   child: const Text('Alterar'),
                 ),
@@ -89,8 +102,15 @@ class DetalheProduto extends StatelessWidget {
                   width: 50,
                 ),
                 ElevatedButton(
-                  style: style,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.purple,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    minimumSize: Size(120, 50),
+                  ),
                   onPressed: () {
+                    print('excluir');
                     produtosController.deletedProduto(id);
                   },
                   child: const Text('Excluir'),

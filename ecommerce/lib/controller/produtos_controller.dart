@@ -33,4 +33,9 @@ class ProdutoController {
     return produtos;
 
   }
+
+  Future<Produtos> buscarProduto(int? produtoId) async {
+    var produtos = await _repository.buscarProduto(produtoId);
+    return produtos;
+  }
 }

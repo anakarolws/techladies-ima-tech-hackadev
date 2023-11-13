@@ -1,4 +1,5 @@
 import 'package:ecommerce/pages/agradecimento_page.dart';
+import 'package:ecommerce/pages/alterar_produto_page.dart';
 import 'package:ecommerce/pages/avaliacao_page.dart';
 import 'package:ecommerce/pages/cadastro_produtos/login_adm_page.dart';
 import 'package:ecommerce/pages/cadastro_produtos/produtos_page.dart';
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
         "/produtosPage": (context) => const ProdutosPage(),
         "/loginPageAdm": (context) => const LoginPageAdm(),
         "/detalheproduto": (context) => DetalheProduto(),
+        "/alterarProdutoPage": (context) => const AlterarProdutoPage(produtoId: null),
 
       },
     );

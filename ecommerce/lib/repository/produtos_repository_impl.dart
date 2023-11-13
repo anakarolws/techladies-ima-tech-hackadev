@@ -100,4 +100,18 @@ class ProdutosRepositoryImpl implements ProdutosRepository {
       throw Exception('Falha ao carregar produtos');
     }
   }
+  
+  @override
+  Future<Produtos> buscarProduto(int? produtoId) async {
+    
+    var url = Uri.parse(dataUrl);
+    var response = await http.get(url);
+    var body = json.decode(response.body);
+    body['price'] = 123;
+    Produtos produto = Produtos.fromJson(body);
+
+    return produto;
+  }
+
+
 }
