@@ -107,10 +107,9 @@ class ProductController extends Controller
 
     public function delete(int $id)
     {
-        // Conceito do PUT em Rest, é subistituir
         $product = Product::findOrFail($id);
         $product->delete();
-        return response('Produto excluído', 204);
+        return response()->json($product);
     }
     public function uploadProfile(int $id, Request $request)
     {

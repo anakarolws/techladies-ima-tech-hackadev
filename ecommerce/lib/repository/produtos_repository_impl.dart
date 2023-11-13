@@ -56,9 +56,15 @@ class ProdutosRepositoryImpl implements ProdutosRepository {
   }
 
   @override
-  Future<String> deletedProduto(Produtos id) {
-    // TODO: implement deletedProduto
-    throw UnimplementedError();
+  Future<Produtos> deletedProduto(int id) async {
+      var url = Uri.parse("$dataUrl$id");
+      var response = await http.delete(url);
+
+      var produto = json.decode(response.body);
+      produto['price'] = double.parse(produto['price'].toString());
+
+      return produto;
+
   }
 
   @override
@@ -78,5 +84,20 @@ class ProdutosRepositoryImpl implements ProdutosRepository {
     }
 
     return produtosList;
+  }
+
+  @override
+  Future<List<dynamic>> buscarProdutosPorTermo(String searchTerm) async {
+
+    final response =
+        await http.get(Uri.parse("$dataUrl?search=$searchTerm"), headers: {
+      "Accept": "application/json",
+    });
+
+    if (response.statusCode == 200) {
+      return json.decode(response.body);
+    } else {
+      throw Exception('Falha ao carregar produtos');
+    }
   }
 }

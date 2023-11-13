@@ -6,6 +6,7 @@ abstract class ProdutosRepository {
   Future<String> getProdutosById(Produtos id);
   Future<void> postProdutos(String title, String description, double price,
       String category, String profile, XFile arquivoImagem);
-  Future<String> deletedProduto(Produtos id);
+  Future<Produtos> deletedProduto(int id);
   Future<List<Produtos>> selecionarProdutoCategoria(String categoria);
+  Future<List<dynamic>> buscarProdutosPorTermo(String search);
 }
