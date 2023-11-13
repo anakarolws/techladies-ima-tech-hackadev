@@ -44,6 +44,25 @@ class ProductController extends Controller
         return response()->json($product);
     }
 
+
+    public function getCategory(Request $request){
+         // se tem: ?category=valor
+         $category = $request->input('category');
+
+         // se tem: ?name=valor
+         $name = $request->input('name');
+ 
+         if ($category) {
+             $products = Product::where('category', $category)->get();
+         } elseif ($name) {
+             $products = Product::where('name', $name)->get();
+         } else {
+             $products = Product::all();
+         }
+ 
+         return response()->json($products);
+    }
+
     public function getAll(Request $request)
     {
         $busca = $request->input('search');

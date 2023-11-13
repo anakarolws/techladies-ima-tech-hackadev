@@ -11,8 +11,13 @@ class ProdutoController {
     return _repository.getProdutos();
   }
 
-  Future<void> fetchProdutosPost(
-      String title, String description, double price, String category, String profile, XFile arquivoImagem) async {
-    return _repository.postProdutos(title, description, price, category, profile, arquivoImagem);
+  Future<void> fetchProdutosPost(String title, String description, double price,
+      String category, String profile, XFile arquivoImagem) async {
+    return _repository.postProdutos(
+        title, description, price, category, profile, arquivoImagem);
+  }
+
+  Future<List<Produtos>> fetchProdutosCategoria(String categoria) {
+    return _repository.selecionarProdutoCategoria(categoria);
   }
 }
