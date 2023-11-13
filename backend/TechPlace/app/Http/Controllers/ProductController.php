@@ -8,111 +8,70 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    public function form()
+    public function index()
     {
-        return view('cadastra_produto');
+        $items = Product::all();
+        return view('products.index', compact('items'));
     }
 
-    public function front()
+    public function create()
     {
-        return view('front_products');
+        return view('products.create');
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
-        $product = new Product($request->all());
+        $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'price' => 'required',
+            'category' => 'required',
+        ]);
 
-        var_dump($product);
+        $product = Product::create($request->all());
         
-
-        // response json 
-        // response()->json([], 201);
-
-        if ($product->save() === true) {
-            return response()->json($product, 201);
-        }
-        return response()->json(["error" => "Erro ao cadastrar"], 400);
-    }
-
-    public function getProduct(int $id)
-    {
-        $product = Product::find($id);
-        return response()->json($product);
-    }
-
-    public function getAll(Request $request)
-    {
-        $busca = $request->input('search');
-        $order = $request->input('order');
-
-        if ($busca) {
-            $products = Product::where('title', 'like', "%$busca%")
-                               ->orWhere('description', 'like', "%$busca%")
-                               ->orWhere('category', 'like', "%$busca%")                               
-                               ;
-        } else {
-            // faz o mesmo que Product::all() -> porém não traz ainda os resultados
-            $products = Product::where(1, '=', 1);
-        }
-
-        if ($order) {
-            // valor: {campo}:{ordenacao}
-            // orderValues[0] = {campo}
-            // orderValues[1] = {ordenacao}
-            // desestruturação usando list()
-            [$campo, $ordenacao] = explode(':', $order);
-            $products->orderBy($campo, $ordenacao);
-        }
-
-        return response()->json($products->get());
-    }
-
-    public function update(int $id, Request $request)
-    {
-        // Conceito do PUT em Rest, é substituir
-        $product = Product::findOrFail($id);
-
-        // Estamos preenchendo o que veio da request
-        // no produtos que selecionamos pelo ID
-        $product->fill($request->all());
-
-        if ($product->save()) {
-            return response()->json($product, 202);
-        }
-        return response('Erro ao atualizar', 400);
-    }
-
-    public function delete(int $id)
-    {
-        // Conceito do PUT em Rest, é subistituir
-        $product = Product::findOrFail($id);
-        $product->delete();
-        return response('Produto excluído', 204);
-    }
-    public function uploadProfile(int $id, Request $request)
-    {
-        $product = Product::findOrFail($id);
-        // Para encontrar a imagem, rodar:
-        // php artisan storage:link
-
-        // se há um arquivo no campo "profile"
-        if ($request->hasFile('profile')) {
+        // Handle File Upload
+        if($request->hasFile('profile')){
             // .png | .jpg | .jpeg 
             $extensao = $request->file('profile')->extension();
             
             // storePubliclyAs armazena o arquivo temporario na pasta informada
             // na área pública: pasta "public" do projeto
             $nomeArquivo = uniqid();
-            $path = $request->file('profile')->storePubliclyAs('public/products/' .  strtolower(preg_replace('/[^\w-]/', '', iconv('UTF-8','ASCII//TRANSLIT', $product->category))), "$nomeArquivo." . $extensao);
+            $path = $request->file('profile')->storePubliclyAs('public/products', "$nomeArquivo." . $extensao);
             $product->profile = Storage::url($path);
             $product->save();
-            
-            // respondemos com um link
-            return response()->json([
-                'url' => Storage::url($path)
-            ]);
         }
 
-        return response('Erro ao salvar a imagem', 400);
+        return redirect()->route('products.index')
+        ->with('success', 'Produto criado com sucesso.');
+    }
+
+    public function edit($id)
+    {
+        $item = Product::find($id);
+        return view('products.edit', compact('item'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'price' => 'required',
+            'category' => 'required',
+        ]);
+        $post = Product::find($id);
+        $post->update($request->all());
+        return redirect()->route('products.index')
+        ->with('success', 'Produto atualizado com sucesso.');
+    }
+
+    public function destroy($id)
+    {
+        $item = Product::find($id);
+        $item->delete();
+        return redirect()->route('products.index')
+        ->with('success', 'Produto excluido com sucesso');
     }
 }
